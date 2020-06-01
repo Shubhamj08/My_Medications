@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="addMedicationViewModel"
+            type="com.project.mymedications.AddMedicationViewModel" />
+
+        <variable
+            name="medicineDetails"
+            type="com.project.mymedications.MedicineDetails" />
+        
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    tools:context=".AddMedicationFragment"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_margin="16dp">
+
+
+    <EditText
+        android:id="@+id/med_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorSecondaryDark"
+        android:ems="10"
+        style="@style/text_style"
+        android:fontFamily="@font/roboto"
+        android:hint="@string/medicine_name"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/med_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/med_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        style="@style/text_style"
+        android:fontFamily="@font/roboto"
+        android:backgroundTint="@color/colorSecondaryDark"
+        android:ems="10"
+        android:hint="@string/description"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/Dosage_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/med_name" />
+
+    <TextView
+        android:id="@+id/Dosage_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorSecondaryDark"
+        android:text="@string/dosage"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="@color/secondaryTextColor"
+        android:fontFamily="@font/arbutus"
+        app:layout_constraintBottom_toTopOf="@+id/LinearLayout1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/med_description" />
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/Dosage_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <EditText
+            android:id="@+id/dose_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_style"
+            android:fontFamily="@font/roboto"
+            android:backgroundTint="@color/colorSecondaryDark"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/dose_1"
+            android:inputType="text"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/time_dose_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_style"
+            android:fontFamily="@font/roboto"
+            android:backgroundTint="@color/colorSecondaryDark"
+            android:layout_weight="1"
+            android:hint="@string/set_time"
+            android:ems="10"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/LinearLayout1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <EditText
+            android:id="@+id/dose_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorSecondaryDark"
+            style="@style/text_style"
+            android:fontFamily="@font/roboto"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/dose_2"
+            android:inputType="text"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/time_dose_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorSecondaryDark"
+            style="@style/text_style"
+            android:fontFamily="@font/roboto"
+            android:layout_weight="1"
+            android:hint="@string/set_time"
+            android:ems="10"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/LinearLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <EditText
+            android:id="@+id/dose_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorSecondaryDark"
+            style="@style/text_style"
+            android:fontFamily="@font/roboto"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/dose_3"
+            android:inputType="text"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/time_dose_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorSecondaryDark"
+            style="@style/text_style"
+            android:fontFamily="@font/roboto"
+            android:layout_weight="1"
+            android:hint="@string/set_time"
+            android:ems="10"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/LinearLayout3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <EditText
+            android:id="@+id/dose_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorSecondaryDark"
+            style="@style/text_style"
+            android:fontFamily="@font/roboto"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/dose_4"
+            android:inputType="text"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/time_dose_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorSecondaryDark"
+            style="@style/text_style"
+            android:fontFamily="@font/roboto"
+            android:layout_weight="1"
+            android:hint="@string/set_time"
+            android:ems="10"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/done_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="193dp"
+        android:background="@drawable/button_background"
+        android:text="@string/done"
+        style="@style/button_style"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/LinearLayout4"
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toStartOf="@+id/LinearLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayout4"
+        app:layout_constraintVertical_bias="0.181" />
+
+    <Button
+        android:id="@+id/see_medicines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/medicine_list"
+        app:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/done_Button"
+        app:layout_constraintVertical_bias="0.055"
+        style="@style/button_style" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

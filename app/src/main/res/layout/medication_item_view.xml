@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="medicine"
+            type="com.project.mymedications.MedicineEntity" />
+
+        <variable
+            name="clickListener"
+            type="com.project.mymedications.MedicineEntityListener" />
+    </data>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="4dp"
+            app:cardCornerRadius="5dp"
+            android:alpha="0.7"
+            app:cardBackgroundColor="@color/colorPrimaryLight"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                tools:context=".ViewMedicationFragment"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:onClick="@{() -> clickListener.onClick(medicine)}">
+
+            <TextView
+                android:id="@+id/med_name"
+                android:paddingStart="8sp"
+                android:paddingTop="8sp"
+                android:paddingBottom="4sp"
+                style="@style/text_style"
+                android:textColor="@color/primaryTextColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="Medicine Name"
+                android:textAlignment="textStart"
+                app:medicineNameFormatted="@{medicine}" />
+
+                <TextView
+                    android:id="@+id/med_desc"
+                    style="@style/text_style"
+                    android:textColor="@color/primaryTextColor"
+                    android:paddingTop="4sp"
+                    android:paddingBottom="8sp"
+                    android:paddingStart="8sp"
+                    android:paddingEnd="4sp"
+                    tools:text="Medicine Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textAlignment="textStart"
+                    app:medicineDescriptionFormatted="@{medicine}" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+</layout>
+

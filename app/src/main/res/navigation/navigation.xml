@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.project.mymedications.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_addMedicationFragment"
+            app:destination="@id/addMedicationFragment"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewMedicationFragment"
+            app:destination="@id/viewMedicationFragment"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMedicationFragment"
+        android:name="com.project.mymedications.AddMedicationFragment"
+        android:label="AddMedicationFragment"
+        tools:layout="@layout/fragment_add_medication">
+        <action
+            android:id="@+id/action_addMedicationFragment_to_viewMedicationFragment"
+            app:destination="@id/viewMedicationFragment"
+            app:popUpTo="@id/addMedicationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewMedicationFragment"
+        android:name="com.project.mymedications.ViewMedicationFragment"
+        android:label="ViewMedicationFragment"
+        tools:layout="@layout/fragment_view_medications">
+        <action
+            android:id="@+id/action_viewMedicationFragment_to_medicineDetailFragment"
+            app:destination="@id/medicineDetailFragment"
+            app:popUpTo="@id/viewMedicationFragment" />
+        <action
+            android:id="@+id/action_viewMedicationFragment_to_addMedicationFragment"
+            app:destination="@id/addMedicationFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicineDetailFragment"
+        android:name="com.project.mymedications.MedicineDetailFragment"
+        android:label="MedicineDetailFragment"
+        tools:layout="@layout/fragment_medicine_detail">
+    <argument
+        android:name="medicineEntityKey"
+        app:argType="long" />
+        <action
+            android:id="@+id/action_medicineDetailFragment_to_addMedicationFragment"
+            app:destination="@id/addMedicationFragment"
+            app:popUpTo="@id/medicineDetailFragment" />
+        <action
+            android:id="@+id/action_medicineDetailFragment_to_viewMedicationFragment"
+            app:destination="@id/viewMedicationFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.project.mymedications.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/fragment_about"/>
+</navigation>
