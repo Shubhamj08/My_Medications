@@ -1,5 +1,5 @@
 # My_Medications
-This is my project for #30DaysOfKotlin
+<h2>This is my project for #30DaysOfKotlin</h2>
 
 <h3>This is an app to store some information about the medicine:</h3>
 <ol type="i">
