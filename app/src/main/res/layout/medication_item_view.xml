@@ -36,33 +36,16 @@
 
             <TextView
                 android:id="@+id/med_name"
-                android:paddingStart="8sp"
-                android:paddingTop="8sp"
-                android:paddingBottom="4sp"
                 style="@style/text_style"
+                android:padding= "20dp"
+                android:elevation="6dp"
                 android:textColor="@color/primaryTextColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 tools:text="Medicine Name"
-                android:textAlignment="textStart"
+                android:textAlignment="center"
                 app:medicineNameFormatted="@{medicine}" />
-
-                <TextView
-                    android:id="@+id/med_desc"
-                    style="@style/text_style"
-                    android:textColor="@color/primaryTextColor"
-                    android:paddingTop="4sp"
-                    android:paddingBottom="8sp"
-                    android:paddingStart="8sp"
-                    android:paddingEnd="4sp"
-                    tools:text="Medicine Description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text=""
-                    android:textAlignment="textStart"
-                    app:medicineDescriptionFormatted="@{medicine}" />
 
             </LinearLayout>
 

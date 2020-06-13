@@ -4,52 +4,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="45dp">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <Button
+            android:id="@+id/addMedication"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="16dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="20dp"
+            android:elevation="4dp"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:text="@string/add_medications_text"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="24sp" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:paddingBottom="8dp"
-                app:srcCompat="@drawable/medicine" />
+        <Button
+            android:id="@+id/seeMedications"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:elevation="4dp"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:text="@string/view_medications_text"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="24sp" />
 
-            <Button
-                android:id="@+id/addMedication"
-                style="@style/button_style"
-                android:layout_width="match_parent"
-                android:paddingBottom="8dp"
-                android:layout_height="100dp"
-                android:background="@drawable/button_background"
-                android:elevation="4dp"
-                android:text="@string/add_medications_text"
-                android:textColor="@color/primaryTextColor"
-                android:textSize="24sp" />
-
-            <Button
-                android:id="@+id/seeMedications"
-                style="@style/button_style"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@drawable/button_background"
-                android:elevation="4dp"
-                android:text="@string/view_medications_text"
-                android:textColor="@color/primaryTextColor"
-                android:textSize="24sp" />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>
