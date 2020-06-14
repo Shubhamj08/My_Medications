@@ -7,23 +7,23 @@
     <string name="add_medications_text">Add Medicines</string>
 
     <string name="med_heading"><![CDATA[<h3>YOUR MEDICINES</h3>]]></string>
-    <string name="med_name"><![CDATA[<b>Name:</b>]]></string>
-    <string name="med_description"><![CDATA[<b>Description:</b>]]></string>
-    <string name="med_dose1"><![CDATA[<b>First Dose:</b>]]></string>
-    <string name="med_dose2"><![CDATA[<b>Second Dose:</b>]]></string>
-    <string name="med_dose3"><![CDATA[<b>Third Dose:</b>]]></string>
-    <string name="med_dose4"><![CDATA[<b>Fourth Dose:</b>]]></string>
-    <string name="med_time"><![CDATA[<b>Time:</b>]]></string>
+<!--    <string name="med_name"><![CDATA[<b>Name:</b>]]></string>-->
+<!--    <string name="med_description"><![CDATA[<b>Description:</b>]]></string>-->
+<!--    <string name="med_dose1"><![CDATA[<b>First Dose:</b>]]></string>-->
+<!--    <string name="med_dose2"><![CDATA[<b>Second Dose:</b>]]></string>-->
+<!--    <string name="med_dose3"><![CDATA[<b>Third Dose:</b>]]></string>-->
+<!--    <string name="med_dose4"><![CDATA[<b>Fourth Dose:</b>]]></string>-->
+<!--    <string name="med_time"><![CDATA[<b>Time:</b>]]></string>-->
     <string name="about_app">This is an app to store some information about the medicine:\n\n(1)Name of the Medicine\n\n(2)Description for medicine: to know what a particular medicine is used for.\n\n(3)You can also add the number of pills or quantity of medicine or syrup u need to take in the dosage section.\n\n(4)Daily doses\'s timing can also be added such as in morning, in afternoon, in evening or before bed you can also add particular time for each medicine like 12pm, 9am, etc.</string>
     <string name="my_medications_app">My Medications App</string>
-    <string name="medicine_name">Medicine Name(mandatory)</string>
-    <string name="description">Description</string>
-    <string name="dosage">Dosage</string>
-    <string name="dose_1">Dose 1</string>
-    <string name="dose_2">Dose 2</string>
-    <string name="dose_3">Dose 3</string>
-    <string name="dose_4">Dose 4</string>
-    <string name="set_time">Set Time</string>
+    <string name="medicine_name">Medicine Name : *</string>
+    <string name="description">Description :</string>
+    <string name="dose">eg: 50mg, 1 tablet, 5mL</string>
+    <string name="dose_1">Dose 1 : </string>
+    <string name="dose_2">Dose 2 :</string>
+    <string name="dose_3">Dose 3 :</string>
+    <string name="dose_4">Dose 4 :</string>
+    <string name="set_time">Time : eg: 10am, afternoon, before bed, after lunch</string>
     <string name="done">Done</string>
     <string name="medicine_list">Medicine List</string>
     <string name="add_new_medicine">Add New Medicine</string>
@@ -34,6 +34,7 @@
     <string name="title_medicine_list">MEDICINE LIST</string>
     <string name="title_about">ABOUT APP</string>
     <string name="title_medicine">MEDICINE</string>
+    <string name="add_dose">Add Dose</string>
 
 
 </resources>

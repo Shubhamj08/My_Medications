@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -39,11 +40,6 @@ class MedicineDetailFragment : Fragment() {
 
         binding.medicineDetailViewModel = medicineDetailViewModel
 
-        binding.addButton.setOnClickListener {
-            it.findNavController()
-                .navigate(R.id.action_medicineDetailFragment_to_addMedicationFragment)
-        }
-
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_medicine)
 
         medicineDetailViewModel.showSnackBarEvent.observe(viewLifecycleOwner, Observer {
@@ -61,6 +57,8 @@ class MedicineDetailFragment : Fragment() {
 
         return binding.root
     }
+
+
 }
 
 
