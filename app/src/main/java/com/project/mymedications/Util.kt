@@ -1,7 +1,10 @@
 package com.project.mymedications
 
+import android.view.View
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.databinding.BindingAdapter
+
 
 @BindingAdapter("medicineNameFormatted")
 fun TextView.setMedicineNameFormatted(item: MedicineEntity?) {
@@ -14,6 +17,15 @@ fun TextView.setMedicineNameFormatted(item: MedicineEntity?) {
 fun TextView.setMedicineDescriptionFormatted(item: MedicineEntity?) {
     item?.let {
         text = item.medDescription
+    }
+}
+
+@BindingAdapter("doseVisibility1")
+fun CardView.setDoseVisibility1(item: MedicineEntity?){
+    item?.let {
+        if(item.dose1 != ""){
+            visibility = View.VISIBLE
+        }
     }
 }
 
@@ -31,6 +43,15 @@ fun TextView.setFirstTimeFormatted(item: MedicineEntity?) {
     }
 }
 
+@BindingAdapter("doseVisibility2")
+fun CardView.setDoseVisibility2(item: MedicineEntity?){
+    item?.let {
+        if(item.dose2 != ""){
+            visibility = View.VISIBLE
+        }
+    }
+}
+
 @BindingAdapter("secondDoseFormatted")
 fun TextView.setSecondDoseFormatted(item: MedicineEntity?) {
     item?.let {
@@ -45,6 +66,15 @@ fun TextView.setSecondTimeFormatted(item: MedicineEntity?) {
     }
 }
 
+@BindingAdapter("doseVisibility3")
+fun CardView.setDoseVisibility3(item: MedicineEntity?){
+    item?.let {
+        if(item.dose3 != ""){
+            visibility = View.VISIBLE
+        }
+    }
+}
+
 @BindingAdapter("thirdDoseFormatted")
 fun TextView.setThirdDoseFormatted(item: MedicineEntity?) {
     item?.let {
@@ -56,6 +86,15 @@ fun TextView.setThirdDoseFormatted(item: MedicineEntity?) {
 fun TextView.setThirdTimeFormatted(item: MedicineEntity?) {
     item?.let {
         text = item.time3
+    }
+}
+
+@BindingAdapter("doseVisibility4")
+fun CardView.setDoseVisibility4(item: MedicineEntity?){
+    item?.let {
+        if(item.dose4 != ""){
+            visibility = View.VISIBLE
+        }
     }
 }
 
