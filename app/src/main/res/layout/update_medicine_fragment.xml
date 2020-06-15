@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="updateMedicineViewModel"
+            type="com.project.mymedications.UpdateMedicineViewModel" />
+
+        <variable
+            name="medicineDetails"
+            type="com.project.mymedications.MedicineDetails" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context=".UpdateMedicineFragment">
+
+
+            <TextView
+                android:id="@+id/med_name_label"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/med_name"
+                android:text="@string/medicine_name" />
+
+            <EditText
+                android:id="@+id/med_name"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorSecondaryDark"
+                android:ems="10"
+                android:fontFamily="@font/roboto"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:text=""
+                app:medicineNameFormatted="@{updateMedicineViewModel.medicine}" />
+
+            <TextView
+                android:id="@+id/med_description_label"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:labelFor="@+id/med_description"
+                android:text="@string/description" />
+
+            <EditText
+                android:id="@+id/med_description"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:backgroundTint="@color/colorSecondaryDark"
+                android:ems="10"
+                android:fontFamily="@font/roboto"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:text=""
+                app:medicineDescriptionFormatted="@{updateMedicineViewModel.medicine}" />
+
+            <LinearLayout
+                android:id="@+id/layout_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layoutVisibility1="@{updateMedicineViewModel.medicine}"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/dose_1_label"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:labelFor="@+id/dose_1"
+                    android:text="@string/dose_1" />
+
+                <EditText
+                    android:id="@+id/dose_1"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorSecondaryDark"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto"
+                    android:hint="@string/dose"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:text=""
+                    app:firstDoseFormatted="@{updateMedicineViewModel.medicine}" />
+
+                <EditText
+                    android:id="@+id/time_dose_1"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorSecondaryDark"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto"
+                    android:hint="@string/set_time"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:text=""
+                    app:firstTimeFormatted="@{updateMedicineViewModel.medicine}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layoutVisibility2="@{updateMedicineViewModel.medicine}"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/dose_2_label"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:labelFor="@+id/dose_2"
+                    android:text="@string/dose_2" />
+
+                <EditText
+                    android:id="@+id/dose_2"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorSecondaryDark"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto"
+                    android:hint="@string/dose"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:text=""
+                    app:secondDoseFormatted="@{updateMedicineViewModel.medicine}" />
+
+                <EditText
+                    android:id="@+id/time_dose_2"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorSecondaryDark"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto"
+                    android:hint="@string/set_time"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:text=""
+                    app:secondTimeFormatted="@{updateMedicineViewModel.medicine}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layoutVisibility3="@{updateMedicineViewModel.medicine}"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/dose_3_label"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:labelFor="@+id/dose_3"
+                    android:text="@string/dose_3" />
+
+                <EditText
+                    android:id="@+id/dose_3"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorSecondaryDark"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto"
+                    android:hint="@string/dose"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:text=""
+                    app:thirdDoseFormatted="@{updateMedicineViewModel.medicine}" />
+
+                <EditText
+                    android:id="@+id/time_dose_3"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorSecondaryDark"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto"
+                    android:hint="@string/set_time"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:text=""
+                    app:thirdTimeFormatted="@{updateMedicineViewModel.medicine}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layoutVisibility4="@{updateMedicineViewModel.medicine}"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/dose_4_label"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:labelFor="@+id/dose_4"
+                    android:text="@string/dose_4" />
+
+                <EditText
+                    android:id="@+id/dose_4"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorSecondaryDark"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto"
+                    android:hint="@string/dose"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:text=""
+                    app:fourthDoseFormatted="@{updateMedicineViewModel.medicine}" />
+
+                <EditText
+                    android:id="@+id/time_dose_4"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorSecondaryDark"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto"
+                    android:hint="@string/set_time"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:text=""
+                    app:fourthTimeFormatted="@{updateMedicineViewModel.medicine}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/add_dose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_input_add" />
+
+                <TextView
+                    android:id="@+id/add_dose_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:text="@string/add_dose"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/update_Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:elevation="5dp"
+                android:padding="15dp"
+                android:text="@string/update"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
