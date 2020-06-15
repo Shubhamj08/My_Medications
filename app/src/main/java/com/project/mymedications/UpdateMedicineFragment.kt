@@ -20,7 +20,8 @@ class UpdateMedicineFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding: UpdateMedicineFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.update_medicine_fragment, container, false)
+        val binding: UpdateMedicineFragmentBinding =
+            DataBindingUtil.inflate(inflater, R.layout.update_medicine_fragment, container, false)
 
         val addMedicationFragment = AddMedicationFragment()
 
@@ -52,7 +53,7 @@ class UpdateMedicineFragment : Fragment() {
 
             if (medUpDetails.medName != "") {
 
-                if(binding.medDescription.text.toString() != "") {
+                if (binding.medDescription.text.toString() != "") {
                     medUpDetails.medDesc = binding.medDescription.text.toString()
                 }
                 if (binding.dose1.text.toString() != "") {
@@ -81,10 +82,11 @@ class UpdateMedicineFragment : Fragment() {
                 }
                 binding.invalidateAll()
 
-                val immh = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                val immh =
+                    context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 immh.hideSoftInputFromWindow(binding.updateButton.windowToken, 0)
 
-               updateMedicineViewModel.onUpdateButtonPressed(medUpDetails)
+                updateMedicineViewModel.onUpdateButtonPressed(medUpDetails)
                 this.findNavController()
                     .navigate(R.id.action_updateMedicineFragment_to_viewMedicationFragment)
 
@@ -92,33 +94,28 @@ class UpdateMedicineFragment : Fragment() {
         }
 
         binding.addDose.setOnClickListener {
-            binding.apply{
+            binding.apply {
                 if (layout1.visibility == View.VISIBLE && layout2.visibility == View.VISIBLE &&
-                    layout3.visibility == View.VISIBLE && layout4.visibility == View.VISIBLE){
+                    layout3.visibility == View.VISIBLE && layout4.visibility == View.VISIBLE
+                ) {
                     addDose.visibility = View.GONE
                     addDoseText.visibility = View.GONE
-                }
-
-                else if(layout1.visibility == View.GONE) {
+                } else if (layout1.visibility == View.GONE) {
                     layout1.visibility = View.VISIBLE
                     return@setOnClickListener
-                }
-                else if (layout2.visibility == View.GONE){
+                } else if (layout2.visibility == View.GONE) {
                     layout2.visibility = View.VISIBLE
                     return@setOnClickListener
-                }
-                else if (layout3.visibility == View.GONE){
+                } else if (layout3.visibility == View.GONE) {
                     layout3.visibility = View.VISIBLE
                     return@setOnClickListener
-                }
-                else if (layout4.visibility == View.GONE){
+                } else if (layout4.visibility == View.GONE) {
                     layout4.visibility = View.VISIBLE
 
                     addDose.visibility = View.GONE
                     addDoseText.visibility = View.GONE
                     return@setOnClickListener
-                }
-                else{
+                } else {
                     addDose.visibility = View.VISIBLE
                     addDoseText.visibility = View.VISIBLE
                 }

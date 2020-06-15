@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-class ViewMedicationViewModelFactory (
+class ViewMedicationViewModelFactory(
     private val dataSource: MedicineDatabaseDao,
     private val application: Application
 ) : ViewModelProvider.Factory {

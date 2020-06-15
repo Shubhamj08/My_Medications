@@ -19,7 +19,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-       val binding:FragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container,false)
+        val binding: FragmentHomeBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
 
         binding.addMedication.setOnClickListener {
             it.findNavController().navigate(R.id.action_homeFragment_to_addMedicationFragment)
@@ -43,8 +44,10 @@ class HomeFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item!!,
-            requireView().findNavController())
+        return NavigationUI.onNavDestinationSelected(
+            item!!,
+            requireView().findNavController()
+        )
                 || super.onOptionsItemSelected(item)
     }
 

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="medicine"
             type="com.project.mymedications.MedicineEntity" />
@@ -15,42 +16,42 @@
             type="com.project.mymedications.MedicineEntityListener" />
     </data>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            app:cardCornerRadius="5dp"
-            android:alpha="0.7"
-            android:background="@android:drawable/dialog_holo_light_frame"
-            app:cardElevation="15dp"
-            app:cardBackgroundColor="@color/colorPrimaryDark">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:alpha="0.7"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="15dp">
 
-            <LinearLayout
-                tools:context=".ViewMedicationFragment"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:onClick="@{() -> clickListener.onClick(medicine)}">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="@{() -> clickListener.onClick(medicine)}"
+            android:orientation="vertical"
+            tools:context=".ViewMedicationFragment">
 
             <TextView
                 android:id="@+id/med_name"
                 style="@style/text_style"
-                android:padding= "20dp"
-                android:elevation="6dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                tools:text="Medicine Name"
-                android:textSize="30sp"
+                android:elevation="6dp"
+                android:padding="20dp"
                 android:textAlignment="center"
-                app:medicineNameFormatted="@{medicine}" />
+                android:textSize="30sp"
+                app:medicineNameFormatted="@{medicine}"
+                tools:text="Medicine Name" />
 
-            </LinearLayout>
+        </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 </layout>
 

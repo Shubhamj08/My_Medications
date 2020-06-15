@@ -7,7 +7,8 @@ import kotlinx.coroutines.*
 
 class MedicineDetailViewModel(
     private val medicineEntityKey: Long = 0L,
-    dataSource: MedicineDatabaseDao): ViewModel() {
+    dataSource: MedicineDatabaseDao
+) : ViewModel() {
 
     val database = dataSource
 
@@ -20,12 +21,12 @@ class MedicineDetailViewModel(
     val medicine: LiveData<MedicineEntity>
 
     init {
-        medicine=database.getMedicineWithId(medicineEntityKey)
+        medicine = database.getMedicineWithId(medicineEntityKey)
     }
 
     fun onDeleteButtonPressed() {
         uiScope.launch {
-          val deleteMedicine = medicine.value ?: return@launch
+            val deleteMedicine = medicine.value ?: return@launch
             delete(deleteMedicine)
             _showSnackbarEvent.value = true
         }

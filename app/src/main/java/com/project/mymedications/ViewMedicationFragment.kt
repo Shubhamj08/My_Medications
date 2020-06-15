@@ -22,7 +22,8 @@ class ViewMedicationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding:FragmentViewMedicationsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_view_medications, container, false)
+        val binding: FragmentViewMedicationsBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_view_medications, container, false)
 
         val application = requireNotNull(this.activity).application
         val dataSource = MedicineDatabase.getInstance(application).medicineDatabaseDao
@@ -33,21 +34,24 @@ class ViewMedicationFragment : Fragment() {
             ViewModelProvider(this, viewModelFactory)
                 .get(ViewMedicationViewModel::class.java)
 
-
         binding.lifecycleOwner = this
         binding.viewMedicationViewModel = viewMedicationViewModel
 
-        val adapter = MedicineAdapter(MedicineEntityListener{ medId ->
+        val adapter = MedicineAdapter(MedicineEntityListener { medId ->
             viewMedicationViewModel.onMedicineEntityClicked(medId)
         })
 
-        viewMedicationViewModel.navigateToMedicineDetail.observe(viewLifecycleOwner, Observer{medicine ->
-            medicine?.let{
-                this.findNavController().navigate(ViewMedicationFragmentDirections
-                    .actionViewMedicationFragmentToMedicineDetailFragment(medicine))
-                viewMedicationViewModel.onMedicineDetailNavigated()
-            }
-        })
+        viewMedicationViewModel.navigateToMedicineDetail.observe(
+            viewLifecycleOwner,
+            Observer { medicine ->
+                medicine?.let {
+                    this.findNavController().navigate(
+                        ViewMedicationFragmentDirections
+                            .actionViewMedicationFragmentToMedicineDetailFragment(medicine)
+                    )
+                    viewMedicationViewModel.onMedicineDetailNavigated()
+                }
+            })
 
         binding.medicineList.adapter = adapter
 
@@ -57,13 +61,15 @@ class ViewMedicationFragment : Fragment() {
             }
         })
 
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_medicine_list)
+        (activity as AppCompatActivity).supportActionBar?.title =
+            getString(R.string.title_medicine_list)
 
         binding.floatingActionButton.setOnClickListener {
-            this.findNavController().navigate(R.id.action_viewMedicationFragment_to_addMedicationFragment)
+            this.findNavController()
+                .navigate(R.id.action_viewMedicationFragment_to_addMedicationFragment)
         }
 
         return binding.root
-        }
     }
+}
 

@@ -55,10 +55,12 @@ class MedicineDetailFragment : Fragment() {
             }
         })
 
-        binding.updateButton.setOnClickListener{medicine ->
-            medicine?.let{
-                this.findNavController().navigate(MedicineDetailFragmentDirections
-                    .actionMedicineDetailFragmentToUpdateMedicineFragment(arguments.medicineEntityKey))
+        binding.updateButton.setOnClickListener { medicine ->
+            medicine?.let {
+                this.findNavController().navigate(
+                    MedicineDetailFragmentDirections
+                        .actionMedicineDetailFragmentToUpdateMedicineFragment(arguments.medicineEntityKey)
+                )
             }
         }
 

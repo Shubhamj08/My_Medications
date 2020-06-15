@@ -26,10 +26,10 @@ class AddMedicationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding:FragmentAddMedicationBinding= DataBindingUtil.inflate(inflater,R.layout.fragment_add_medication, container, false)
+        val binding: FragmentAddMedicationBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_add_medication, container, false)
 
         binding.medicineDetails = this.medicineDetails
-
 
 
         val application = requireNotNull(this.activity).application
@@ -39,7 +39,7 @@ class AddMedicationFragment : Fragment() {
 
         val addMedicationViewModel =
             ViewModelProvider(this, viewModelFactory)
-            .get(AddMedicationViewModel::class.java)
+                .get(AddMedicationViewModel::class.java)
 
         binding.lifecycleOwner = this
         binding.addMedicationViewModel = addMedicationViewModel
@@ -55,7 +55,7 @@ class AddMedicationFragment : Fragment() {
 
             if (medicineDetails.medName != "") {
 
-                if(binding.medDescription.text.toString() != "") {
+                if (binding.medDescription.text.toString() != "") {
                     medicineDetails.medDesc = binding.medDescription.text.toString()
                 }
                 if (binding.dose1.text.toString() != "") {
@@ -84,7 +84,8 @@ class AddMedicationFragment : Fragment() {
                 }
                 binding.invalidateAll()
 
-                val immh = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                val immh =
+                    context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 immh.hideSoftInputFromWindow(binding.doneButton.windowToken, 0)
 
                 addMedicationViewModel.onDonePressed(medicineDetails)
@@ -94,39 +95,37 @@ class AddMedicationFragment : Fragment() {
             }
         }
 
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_add_medicine)
+        (activity as AppCompatActivity).supportActionBar?.title =
+            getString(R.string.title_add_medicine)
 
-           binding.seeMedicines.setOnClickListener {
+        binding.seeMedicines.setOnClickListener {
 
-               val immh = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-               immh.hideSoftInputFromWindow(binding.doneButton.windowToken, 0)
+            val immh = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            immh.hideSoftInputFromWindow(binding.doneButton.windowToken, 0)
 
-               this.findNavController()
-                   .navigate(R.id.action_addMedicationFragment_to_viewMedicationFragment)
-           }
+            this.findNavController()
+                .navigate(R.id.action_addMedicationFragment_to_viewMedicationFragment)
+        }
 
         binding.addDose.setOnClickListener {
-            binding.apply{
+            binding.apply {
 
-                if(dose1Label.visibility == View.GONE) {
+                if (dose1Label.visibility == View.GONE) {
                     dose1Label.visibility = View.VISIBLE
                     dose1.visibility = View.VISIBLE
                     timeDose1.visibility = View.VISIBLE
                     return@setOnClickListener
-                }
-                else if (dose2Label.visibility == View.GONE){
+                } else if (dose2Label.visibility == View.GONE) {
                     dose2Label.visibility = View.VISIBLE
                     dose2.visibility = View.VISIBLE
                     timeDose2.visibility = View.VISIBLE
                     return@setOnClickListener
-                }
-                else if (dose3Label.visibility == View.GONE){
+                } else if (dose3Label.visibility == View.GONE) {
                     dose3Label.visibility = View.VISIBLE
                     dose3.visibility = View.VISIBLE
                     timeDose3.visibility = View.VISIBLE
                     return@setOnClickListener
-                }
-                else if (dose4Label.visibility == View.GONE){
+                } else if (dose4Label.visibility == View.GONE) {
                     dose4Label.visibility = View.VISIBLE
                     dose4.visibility = View.VISIBLE
                     timeDose4.visibility = View.VISIBLE

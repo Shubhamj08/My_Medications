@@ -7,29 +7,29 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="45dp">
+        android:layout_margin="45dp"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/addMedication"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
             android:layout_marginBottom="20dp"
-            android:elevation="4dp"
+            android:layout_weight="1"
             android:background="@android:drawable/dialog_holo_light_frame"
-            style="?android:attr/buttonBarButtonStyle"
+            android:elevation="4dp"
             android:text="@string/add_medications_text"
             android:textSize="24sp" />
 
         <Button
             android:id="@+id/seeMedications"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:elevation="4dp"
             android:background="@android:drawable/dialog_holo_light_frame"
-            style="?android:attr/buttonBarButtonStyle"
+            android:elevation="4dp"
             android:text="@string/view_medications_text"
             android:textSize="24sp" />
 

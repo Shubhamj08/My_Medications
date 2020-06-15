@@ -6,9 +6,10 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.*
 
 
-
-class ViewMedicationViewModel(val database: MedicineDatabaseDao,
- val application: Application): ViewModel() {
+class ViewMedicationViewModel(
+    val database: MedicineDatabaseDao,
+    val application: Application
+) : ViewModel() {
 
     val medicines = database.getAllMedicines()
     private var viewModelJob = Job()
@@ -16,6 +17,7 @@ class ViewMedicationViewModel(val database: MedicineDatabaseDao,
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     private var currentMedicine = MutableLiveData<MedicineEntity?>()
+
     init {
         initializeCurrentMedicine()
     }
@@ -29,7 +31,7 @@ class ViewMedicationViewModel(val database: MedicineDatabaseDao,
     private suspend fun getCurrentMedicineFromDatabase(): MedicineEntity? {
         return withContext(Dispatchers.IO) {
             var medicine = database.getRecentMedicine()
-            if(medicine?.medId != 0L){
+            if (medicine?.medId != 0L) {
                 medicine = null
             }
             medicine

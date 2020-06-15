@@ -6,7 +6,8 @@ import kotlinx.coroutines.*
 
 class AddMedicationViewModel(
     val database: MedicineDatabaseDao,
-    application: Application): ViewModel(){
+    application: Application
+) : ViewModel() {
 
     val addMedication: AddMedicationFragment = AddMedicationFragment()
 
@@ -14,10 +15,11 @@ class AddMedicationViewModel(
 
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
-        private var currentMedicine = MutableLiveData<MedicineEntity?>()
-        init {
-            initializeCurrentMedicine()
-        }
+    private var currentMedicine = MutableLiveData<MedicineEntity?>()
+
+    init {
+        initializeCurrentMedicine()
+    }
 
     private fun initializeCurrentMedicine() {
         uiScope.launch {
@@ -28,7 +30,7 @@ class AddMedicationViewModel(
     private suspend fun getCurrentMedicineFromDatabase(): MedicineEntity? {
         return withContext(Dispatchers.IO) {
             var medicine = database.getRecentMedicine()
-            if(medicine?.medId != 0L){
+            if (medicine?.medId != 0L) {
                 medicine = null
             }
             medicine
@@ -37,7 +39,7 @@ class AddMedicationViewModel(
 
     fun onDonePressed(medicineDetails: MedicineDetails) {
         uiScope.launch {
-                val newMedicine = MedicineEntity()
+            val newMedicine = MedicineEntity()
             newMedicine.medName = medicineDetails.medName
             newMedicine.medDescription = medicineDetails.medDesc
             newMedicine.dose1 = medicineDetails.dose1
@@ -48,8 +50,8 @@ class AddMedicationViewModel(
             newMedicine.time3 = medicineDetails.time3
             newMedicine.dose4 = medicineDetails.dose4
             newMedicine.time4 = medicineDetails.time4
-                insert(newMedicine)
-                currentMedicine.value = getCurrentMedicineFromDatabase()
+            insert(newMedicine)
+            currentMedicine.value = getCurrentMedicineFromDatabase()
         }
     }
 

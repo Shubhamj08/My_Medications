@@ -4,8 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.*
 
-class UpdateMedicineViewModel(private val medicineEntityKey: Long = 0L,
-                              dataSource: MedicineDatabaseDao) : ViewModel() {
+class UpdateMedicineViewModel(
+    private val medicineEntityKey: Long = 0L,
+    dataSource: MedicineDatabaseDao
+) : ViewModel() {
 
     val database = dataSource
 
@@ -18,7 +20,7 @@ class UpdateMedicineViewModel(private val medicineEntityKey: Long = 0L,
     val medicine: LiveData<MedicineEntity>
 
     init {
-        medicine=database.getMedicineWithId(medicineEntityKey)
+        medicine = database.getMedicineWithId(medicineEntityKey)
     }
 
     fun onUpdateButtonPressed(medicineDetails: MedicineDetails) {

@@ -10,7 +10,7 @@ abstract class MedicineDatabase : RoomDatabase() {
 
     abstract val medicineDatabaseDao: MedicineDatabaseDao
 
-    companion object{
+    companion object {
         @Volatile
         private var INSTANCE: MedicineDatabase? = null
 
@@ -22,7 +22,8 @@ abstract class MedicineDatabase : RoomDatabase() {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         MedicineDatabase::class.java,
-                        "medicine_history_database").fallbackToDestructiveMigration().build()
+                        "medicine_history_database"
+                    ).fallbackToDestructiveMigration().build()
                     INSTANCE = instance
                 }
                 return instance
