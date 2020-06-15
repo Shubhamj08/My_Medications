@@ -35,6 +35,7 @@
     <string name="title_about">ABOUT APP</string>
     <string name="title_medicine">MEDICINE</string>
     <string name="add_dose">Add Dose</string>
+    <string name="update">Update</string>
 
 
 </resources>

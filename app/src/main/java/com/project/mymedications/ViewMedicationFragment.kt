@@ -47,7 +47,6 @@ class ViewMedicationFragment : Fragment() {
                     .actionViewMedicationFragmentToMedicineDetailFragment(medicine))
                 viewMedicationViewModel.onMedicineDetailNavigated()
             }
-
         })
 
         binding.medicineList.adapter = adapter

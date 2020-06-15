@@ -1,6 +1,7 @@
 package com.project.mymedications
 
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.databinding.BindingAdapter
@@ -23,7 +24,7 @@ fun TextView.setMedicineDescriptionFormatted(item: MedicineEntity?) {
 @BindingAdapter("doseVisibility1")
 fun CardView.setDoseVisibility1(item: MedicineEntity?){
     item?.let {
-        if(item.dose1 != ""){
+        if(item.dose1 != "" || item.time1 != ""){
             visibility = View.VISIBLE
         }
     }
@@ -46,7 +47,7 @@ fun TextView.setFirstTimeFormatted(item: MedicineEntity?) {
 @BindingAdapter("doseVisibility2")
 fun CardView.setDoseVisibility2(item: MedicineEntity?){
     item?.let {
-        if(item.dose2 != ""){
+        if(item.dose2 != "" || item.time2 != ""){
             visibility = View.VISIBLE
         }
     }
@@ -69,7 +70,7 @@ fun TextView.setSecondTimeFormatted(item: MedicineEntity?) {
 @BindingAdapter("doseVisibility3")
 fun CardView.setDoseVisibility3(item: MedicineEntity?){
     item?.let {
-        if(item.dose3 != ""){
+        if(item.dose3 != "" || item.time3 != ""){
             visibility = View.VISIBLE
         }
     }
@@ -92,7 +93,7 @@ fun TextView.setThirdTimeFormatted(item: MedicineEntity?) {
 @BindingAdapter("doseVisibility4")
 fun CardView.setDoseVisibility4(item: MedicineEntity?){
     item?.let {
-        if(item.dose4 != ""){
+        if(item.dose4 != "" || item.time4 != ""){
             visibility = View.VISIBLE
         }
     }
@@ -112,4 +113,38 @@ fun TextView.setFourthTimeFormatted(item: MedicineEntity?) {
     }
 }
 
+@BindingAdapter("layoutVisibility1")
+fun LinearLayout.setLayoutVisibility1(item: MedicineEntity?){
+    item?.let {
+        if(item.dose1 != "" || item.time1 != ""){
+            visibility = View.VISIBLE
+        }
+    }
+}
 
+@BindingAdapter("layoutVisibility2")
+fun LinearLayout.setLayoutVisibility2(item: MedicineEntity?){
+    item?.let {
+        if(item.dose2 != "" || item.time2 != ""){
+            visibility = View.VISIBLE
+        }
+    }
+}
+
+@BindingAdapter("layoutVisibility3")
+fun LinearLayout.setLayoutVisibility3(item: MedicineEntity?){
+    item?.let {
+        if(item.dose3 != "" || item.time3 != ""){
+            visibility = View.VISIBLE
+        }
+    }
+}
+
+@BindingAdapter("layoutVisibility4")
+fun LinearLayout.setLayoutVisibility4(item: MedicineEntity?){
+    item?.let {
+        if(item.dose1 != "" || item.time4 != ""){
+            visibility = View.VISIBLE
+        }
+    }
+}

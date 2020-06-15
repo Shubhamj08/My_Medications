@@ -31,7 +31,7 @@
         <action
             android:id="@+id/action_addMedicationFragment_to_viewMedicationFragment"
             app:destination="@id/viewMedicationFragment"
-            app:popUpTo="@id/addMedicationFragment" />
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/viewMedicationFragment"
@@ -63,10 +63,27 @@
             android:id="@+id/action_medicineDetailFragment_to_viewMedicationFragment"
             app:destination="@id/viewMedicationFragment"
             app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_medicineDetailFragment_to_updateMedicineFragment"
+            app:destination="@id/updateMedicineFragment"
+            app:popUpTo="@id/medicineDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.project.mymedications.AboutFragment"
         android:label="AboutFragment"
         tools:layout="@layout/fragment_about"/>
+    <fragment
+        android:id="@+id/updateMedicineFragment"
+        android:name="com.project.mymedications.UpdateMedicineFragment"
+        android:label="UpdateMedicineFragment"
+        tools:layout="@layout/update_medicine_fragment">
+    <argument
+        android:name="medicineEntityKey"
+        app:argType="long" />
+        <action
+            android:id="@+id/action_updateMedicineFragment_to_viewMedicationFragment"
+            app:destination="@id/viewMedicationFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
 </navigation>

@@ -56,7 +56,6 @@ class AddMedicationViewModel(
     private suspend fun insert(medicine: MedicineEntity) {
         withContext(Dispatchers.IO) {
             database.insert(medicine)
-
         }
     }
 

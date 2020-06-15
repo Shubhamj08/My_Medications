@@ -6,9 +6,11 @@ import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.project.mymedications.databinding.FragmentMedicineDetailBinding
 
@@ -52,6 +54,13 @@ class MedicineDetailFragment : Fragment() {
                 medicineDetailViewModel.doneShowingSnackbar()
             }
         })
+
+        binding.updateButton.setOnClickListener{medicine ->
+            medicine?.let{
+                this.findNavController().navigate(MedicineDetailFragmentDirections
+                    .actionMedicineDetailFragmentToUpdateMedicineFragment(arguments.medicineEntityKey))
+            }
+        }
 
         binding.lifecycleOwner = this
 

@@ -37,7 +37,6 @@ class MedicineDetailViewModel(
         }
     }
 
-
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()

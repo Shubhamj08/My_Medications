@@ -43,7 +43,7 @@
         android:importantForAutofill="no"
         style="@style/text_style"
         android:fontFamily="@font/roboto"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:text="" />
 
     <TextView
@@ -65,27 +65,8 @@
         android:fontFamily="@font/roboto"
         android:backgroundTint="@color/colorSecondaryDark"
         android:ems="10"
-        android:inputType="text"
+        android:inputType="textMultiLine"
         android:text="" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <ImageButton
-        android:id="@+id/add_dose_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/ic_input_add" />
-
-    <TextView
-        android:id="@+id/add_dose_text1"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:textSize="22sp"
-        android:gravity="bottom"
-        android:layout_weight="1"
-        android:text="@string/add_dose" />
-
-</LinearLayout>
 
     <TextView
         android:id="@+id/dose_1_label"
@@ -126,28 +107,6 @@
         android:inputType="text"
         android:visibility="gone"
         android:text=""/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageButton
-            android:id="@+id/add_dose_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            app:srcCompat="@android:drawable/ic_input_add" />
-
-        <TextView
-            android:id="@+id/add_dose_text2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="bottom"
-            android:text="@string/add_dose"
-            android:textSize="22sp"
-            android:visibility="gone" />
-
-    </LinearLayout>
 
     <TextView
         android:id="@+id/dose_2_label"
@@ -188,29 +147,6 @@
         android:inputType="text"
         android:visibility="gone"
         android:text=""/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageButton
-            android:id="@+id/add_dose_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            app:srcCompat="@android:drawable/ic_input_add" />
-
-        <TextView
-            android:id="@+id/add_dose_text3"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="bottom"
-            android:text="@string/add_dose"
-            android:textSize="22sp"
-            android:visibility="gone" />
-
-    </LinearLayout>
 
     <TextView
         android:id="@+id/dose_3_label"
@@ -257,21 +193,19 @@
         android:layout_height="wrap_content">
 
         <ImageButton
-            android:id="@+id/add_dose_4"
+            android:id="@+id/add_dose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             app:srcCompat="@android:drawable/ic_input_add" />
 
         <TextView
-            android:id="@+id/add_dose_text4"
+            android:id="@+id/add_dose_text"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="bottom"
             android:text="@string/add_dose"
-            android:textSize="22sp"
-            android:visibility="gone" />
+            android:textSize="22sp" />
 
     </LinearLayout>
 
@@ -323,11 +257,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        style="?android:attr/buttonBarButtonStyle"
+        android:background="@android:drawable/dialog_holo_light_frame"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="3dp"
-        android:padding="3dp"
+        android:padding="20dp"
         android:elevation="5dp"
         android:text="@string/done" />
 
@@ -336,11 +270,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        style="?android:attr/buttonBarButtonStyle"
+        android:background="@android:drawable/dialog_holo_light_frame"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="3dp"
-        android:padding="3dp"
+        android:padding="20dp"
         app:elevation="5dp"
         android:text="@string/medicine_list" />
     </LinearLayout>

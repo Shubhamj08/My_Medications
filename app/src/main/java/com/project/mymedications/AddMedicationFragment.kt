@@ -19,7 +19,7 @@ import com.project.mymedications.databinding.FragmentAddMedicationBinding
  */
 class AddMedicationFragment : Fragment() {
 
-    private val medicineDetails: MedicineDetails = MedicineDetails("")
+    val medicineDetails: MedicineDetails = MedicineDetails("")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -105,58 +105,40 @@ class AddMedicationFragment : Fragment() {
                    .navigate(R.id.action_addMedicationFragment_to_viewMedicationFragment)
            }
 
-        binding.addDose1.setOnClickListener {
+        binding.addDose.setOnClickListener {
             binding.apply{
-                dose1Label.visibility = View.VISIBLE
-                dose1.visibility = View.VISIBLE
-                timeDose1.visibility = View.VISIBLE
 
-                addDose2.visibility = View.VISIBLE
-                addDoseText2.visibility =View.VISIBLE
+                if(dose1Label.visibility == View.GONE) {
+                    dose1Label.visibility = View.VISIBLE
+                    dose1.visibility = View.VISIBLE
+                    timeDose1.visibility = View.VISIBLE
+                    return@setOnClickListener
+                }
+                else if (dose2Label.visibility == View.GONE){
+                    dose2Label.visibility = View.VISIBLE
+                    dose2.visibility = View.VISIBLE
+                    timeDose2.visibility = View.VISIBLE
+                    return@setOnClickListener
+                }
+                else if (dose3Label.visibility == View.GONE){
+                    dose3Label.visibility = View.VISIBLE
+                    dose3.visibility = View.VISIBLE
+                    timeDose3.visibility = View.VISIBLE
+                    return@setOnClickListener
+                }
+                else if (dose4Label.visibility == View.GONE){
+                    dose4Label.visibility = View.VISIBLE
+                    dose4.visibility = View.VISIBLE
+                    timeDose4.visibility = View.VISIBLE
 
-                addDoseText1.visibility =View.GONE
-                addDose1.visibility = View.GONE
+                    addDose.visibility = View.GONE
+                    addDoseText.visibility = View.GONE
+                    return@setOnClickListener
+                }
+
             }
         }
 
-        binding.addDose2.setOnClickListener {
-            binding.apply{
-                dose2Label.visibility = View.VISIBLE
-                dose2.visibility = View.VISIBLE
-                timeDose2.visibility = View.VISIBLE
-
-                addDose3.visibility = View.VISIBLE
-                addDoseText3.visibility =View.VISIBLE
-
-                addDoseText2.visibility =View.GONE
-                addDose2.visibility = View.GONE
-            }
-        }
-
-        binding.addDose3.setOnClickListener {
-            binding.apply{
-                dose3Label.visibility = View.VISIBLE
-                dose3.visibility = View.VISIBLE
-                timeDose3.visibility = View.VISIBLE
-
-                addDose4.visibility = View.VISIBLE
-                addDoseText4.visibility =View.VISIBLE
-
-                addDoseText3.visibility =View.GONE
-                addDose3.visibility = View.GONE
-            }
-        }
-
-        binding.addDose4.setOnClickListener {
-            binding.apply{
-                dose4Label.visibility = View.VISIBLE
-                dose4.visibility = View.VISIBLE
-                timeDose4.visibility = View.VISIBLE
-
-                addDoseText4.visibility =View.GONE
-                addDose4.visibility = View.GONE
-            }
-        }
 
         return binding.root
     }
