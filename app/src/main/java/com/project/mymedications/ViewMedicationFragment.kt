@@ -1,10 +1,9 @@
 package com.project.mymedications
 
 import android.os.Bundle
+import android.view.*
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -39,7 +38,7 @@ class ViewMedicationFragment : Fragment() {
 
         val adapter = MedicineAdapter(MedicineEntityListener { medId ->
             viewMedicationViewModel.onMedicineEntityClicked(medId)
-        })
+        }, allMeds = mutableListOf(MedicineEntity()))
 
         viewMedicationViewModel.navigateToMedicineDetail.observe(
             viewLifecycleOwner,
@@ -59,6 +58,19 @@ class ViewMedicationFragment : Fragment() {
             it?.let {
                 adapter.submitList(it)
             }
+        })
+
+        binding.searchMedicine.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                adapter.filter.filter(newText)
+                return false
+            }
+
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
         })
 
         (activity as AppCompatActivity).supportActionBar?.title =

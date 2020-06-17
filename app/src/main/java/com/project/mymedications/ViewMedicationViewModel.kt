@@ -12,6 +12,7 @@ class ViewMedicationViewModel(
 ) : ViewModel() {
 
     val medicines = database.getAllMedicines()
+
     private var viewModelJob = Job()
 
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
