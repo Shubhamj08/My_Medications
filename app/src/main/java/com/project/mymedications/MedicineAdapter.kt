@@ -4,18 +4,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.project.mymedications.databinding.MedicationItemViewBinding
 
 
-class MedicineAdapter(val clickListener: MedicineEntityListener, val allMeds:List<MedicineEntity>) :
+class MedicineAdapter(val clickListener: MedicineEntityListener, val allMeds:ArrayList<MedicineEntity>) :
     ListAdapter<MedicineEntity, MedicineAdapter.ViewHolder>(MedicineEntityDiffCallback()),
     Filterable {
 
-    var medList = arrayListOf<MedicineEntity>()
+    var medList: ArrayList<MedicineEntity> =  allMeds
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(getItem(position)!!, clickListener)
@@ -55,8 +54,8 @@ class MedicineAdapter(val clickListener: MedicineEntityListener, val allMeds:Lis
                 charSequence: CharSequence?,
                 filterResults: Filter.FilterResults
             ) {
-                medList = filterResults.values as ArrayList<MedicineEntity>
-                notifyDataSetChanged()
+                    medList = filterResults.values as ArrayList<MedicineEntity>
+                    submitList(medList)
             }
 
             override fun performFiltering(charSequence: CharSequence?): Filter.FilterResults {
@@ -65,7 +64,7 @@ class MedicineAdapter(val clickListener: MedicineEntityListener, val allMeds:Lis
                 filterResults.values =
                     if (queryString == null || queryString.isEmpty()) {
                         allMeds
-                    } else medList.filter {
+                    } else allMeds.filter {
                         it.medName.toLowerCase().contains(queryString)
                     }
                 return filterResults

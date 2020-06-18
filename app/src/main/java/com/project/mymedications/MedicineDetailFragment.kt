@@ -52,6 +52,7 @@ class MedicineDetailFragment : Fragment() {
                     Snackbar.LENGTH_LONG
                 ).show()
                 medicineDetailViewModel.doneShowingSnackbar()
+                this.findNavController().navigate(R.id.action_medicineDetailFragment_to_homeFragment)
             }
         })
 

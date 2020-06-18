@@ -1,6 +1,7 @@
 package com.project.mymedications
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.room.*
 
 
@@ -25,8 +26,11 @@ interface MedicineDatabaseDao {
     @Query("SELECT * FROM medicine_info_table ORDER BY medId DESC LIMIT 1")
     fun getRecentMedicine(): MedicineEntity?
 
-    @Query("SELECT * FROM medicine_info_table ORDER BY medId DESC")
+    @Query("SELECT * FROM medicine_info_table ORDER BY medName")
     fun getAllMedicines(): LiveData<List<MedicineEntity>>
+
+    @Query("SELECT * FROM medicine_info_table ORDER BY medName")
+    fun getMedicines(): List<MedicineEntity>
 
     @Query("SELECT * from medicine_info_table WHERE medId = :key")
     fun getMedicineWithId(key: Long): LiveData<MedicineEntity>

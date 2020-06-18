@@ -28,7 +28,7 @@
     <string name="medicine_list">Medicine List</string>
     <string name="add_new_medicine">Add New Medicine</string>
     <string name="delete">Delete</string>
-    <string name="cleared_message">This Medicine is deleted. Press the arrow button to see updated Medicine List</string>
+    <string name="cleared_message">This Medicine is deleted...</string>
     <string name="title_home">HOME</string>
     <string name="title_add_medicine">ADD MEDICINE</string>
     <string name="title_medicine_list">MEDICINE LIST</string>

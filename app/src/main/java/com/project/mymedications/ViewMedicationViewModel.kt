@@ -13,6 +13,8 @@ class ViewMedicationViewModel(
 
     val medicines = database.getAllMedicines()
 
+    var allMedicines = arrayListOf<MedicineEntity>()
+
     private var viewModelJob = Job()
 
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
@@ -21,6 +23,23 @@ class ViewMedicationViewModel(
 
     init {
         initializeCurrentMedicine()
+        initializeAllMedicines()
+    }
+
+    private fun initializeAllMedicines(): List<MedicineEntity> {
+        uiScope.launch {
+            allMedicines = getMedicinesFromDatabase()
+        }
+        return allMedicines
+    }
+
+    private suspend fun getMedicinesFromDatabase(): ArrayList<MedicineEntity> {
+        return withContext(Dispatchers.IO){
+            database.getMedicines().forEach {
+                allMedicines.add(it)
+            }
+            allMedicines
+        }
     }
 
     private fun initializeCurrentMedicine() {

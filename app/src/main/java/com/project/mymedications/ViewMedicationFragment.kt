@@ -6,6 +6,7 @@ import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -38,7 +39,7 @@ class ViewMedicationFragment : Fragment() {
 
         val adapter = MedicineAdapter(MedicineEntityListener { medId ->
             viewMedicationViewModel.onMedicineEntityClicked(medId)
-        }, allMeds = mutableListOf(MedicineEntity()))
+        }, viewMedicationViewModel.allMedicines)
 
         viewMedicationViewModel.navigateToMedicineDetail.observe(
             viewLifecycleOwner,
@@ -70,7 +71,6 @@ class ViewMedicationFragment : Fragment() {
             override fun onQueryTextSubmit(query: String): Boolean {
                 return false
             }
-
         })
 
         (activity as AppCompatActivity).supportActionBar?.title =
