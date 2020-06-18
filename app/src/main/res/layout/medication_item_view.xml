@@ -21,8 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:alpha="0.7"
-        android:background="@android:drawable/dialog_holo_light_frame"
-        app:cardBackgroundColor="@color/colorPrimaryDark"
+        style="?android:attr/buttonBarButtonStyle"
+        android:background="@android:drawable/dialog_holo_dark_frame"
         app:cardCornerRadius="5dp"
         app:cardElevation="15dp">
 
@@ -43,6 +43,7 @@
                 android:padding="20dp"
                 android:textAlignment="center"
                 android:textSize="30sp"
+                android:textColor="@color/colorPrimaryLight"
                 app:medicineNameFormatted="@{medicine}"
                 tools:text="Medicine Name" />
 
