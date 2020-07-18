@@ -93,31 +93,33 @@ class UpdateMedicineFragment : Fragment() {
             }
         }
 
+        binding.apply {
+            if (layout1.visibility == View.VISIBLE && layout2.visibility == View.VISIBLE &&
+                layout3.visibility == View.VISIBLE && layout4.visibility == View.VISIBLE
+            ){
+                addDose.visibility = View.GONE
+                addDoseText.visibility = View.GONE
+            }
+            else{
+                addDose.visibility = View.VISIBLE
+                addDoseText.visibility = View.VISIBLE
+            }
+        }
         binding.addDose.setOnClickListener {
             binding.apply {
-                if (layout1.visibility == View.VISIBLE && layout2.visibility == View.VISIBLE &&
-                    layout3.visibility == View.VISIBLE && layout4.visibility == View.VISIBLE
-                ) {
-                    addDose.visibility = View.GONE
-                    addDoseText.visibility = View.GONE
-                } else if (layout1.visibility == View.GONE) {
-                    layout1.visibility = View.VISIBLE
-                    return@setOnClickListener
-                } else if (layout2.visibility == View.GONE) {
-                    layout2.visibility = View.VISIBLE
-                    return@setOnClickListener
-                } else if (layout3.visibility == View.GONE) {
-                    layout3.visibility = View.VISIBLE
-                    return@setOnClickListener
-                } else if (layout4.visibility == View.GONE) {
-                    layout4.visibility = View.VISIBLE
-
-                    addDose.visibility = View.GONE
-                    addDoseText.visibility = View.GONE
-                    return@setOnClickListener
-                } else {
-                    addDose.visibility = View.VISIBLE
-                    addDoseText.visibility = View.VISIBLE
+                when {
+                    layout1.visibility == View.GONE -> {
+                        layout1.visibility = View.VISIBLE
+                    }
+                    layout2.visibility == View.GONE -> {
+                        layout2.visibility = View.VISIBLE
+                    }
+                    layout3.visibility == View.GONE -> {
+                        layout3.visibility = View.VISIBLE
+                    }
+                    else -> {
+                        layout4.visibility = View.VISIBLE
+                    }
                 }
             }
         }

@@ -110,29 +110,22 @@ class AddMedicationFragment : Fragment() {
         binding.addDose.setOnClickListener {
             binding.apply {
 
-                if (dose1Label.visibility == View.GONE) {
-                    dose1Label.visibility = View.VISIBLE
-                    dose1.visibility = View.VISIBLE
-                    timeDose1.visibility = View.VISIBLE
-                    return@setOnClickListener
-                } else if (dose2Label.visibility == View.GONE) {
-                    dose2Label.visibility = View.VISIBLE
-                    dose2.visibility = View.VISIBLE
-                    timeDose2.visibility = View.VISIBLE
-                    return@setOnClickListener
-                } else if (dose3Label.visibility == View.GONE) {
-                    dose3Label.visibility = View.VISIBLE
-                    dose3.visibility = View.VISIBLE
-                    timeDose3.visibility = View.VISIBLE
-                    return@setOnClickListener
-                } else if (dose4Label.visibility == View.GONE) {
-                    dose4Label.visibility = View.VISIBLE
-                    dose4.visibility = View.VISIBLE
-                    timeDose4.visibility = View.VISIBLE
+                when {
+                    dose1Card.visibility == View.GONE -> {
+                        dose1Card.visibility = View.VISIBLE
+                    }
+                    dose2Card.visibility == View.GONE -> {
+                        dose2Card.visibility = View.VISIBLE
+                    }
+                    dose3Card.visibility == View.GONE -> {
+                        dose3Card.visibility = View.VISIBLE
+                    }
+                    dose4Card.visibility == View.GONE -> {
+                        dose4Card.visibility = View.VISIBLE
 
-                    addDose.visibility = View.GONE
-                    addDoseText.visibility = View.GONE
-                    return@setOnClickListener
+                        addDose.visibility = View.GONE
+                        addDoseText.visibility = View.GONE
+                    }
                 }
 
             }

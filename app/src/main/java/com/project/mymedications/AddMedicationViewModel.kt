@@ -3,6 +3,7 @@ package com.project.mymedications
 import android.app.Application
 import androidx.lifecycle.*
 import kotlinx.coroutines.*
+import kotlin.math.absoluteValue
 
 class AddMedicationViewModel(
     val database: MedicineDatabaseDao,

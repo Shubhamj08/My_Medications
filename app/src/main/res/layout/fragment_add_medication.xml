@@ -28,167 +28,217 @@
             tools:context=".AddMedicationFragment">
 
 
-            <TextView
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/med_name_label"
-                style="@style/text_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:labelFor="@+id/med_name"
-                android:text="@string/medicine_name" />
+                android:layout_margin="4dp"
+                android:hint="@string/medicine_name">
 
-            <EditText
-                android:id="@+id/med_name"
-                style="@style/text_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorSecondaryDark"
-                android:ems="10"
-                android:fontFamily="@font/roboto"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:text="" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/med_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"/>
 
-            <TextView
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/med_description_label"
-                style="@style/text_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:labelFor="@+id/med_description"
-                android:text="@string/description" />
+                android:layout_margin="4dp"
+                android:hint="@string/description">
 
-            <EditText
-                android:id="@+id/med_description"
-                style="@style/text_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="1dp"
-                android:backgroundTint="@color/colorSecondaryDark"
-                android:ems="10"
-                android:fontFamily="@font/roboto"
-                android:importantForAutofill="no"
-                android:inputType="textMultiLine"
-                android:text="" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/med_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/dose_1_label"
-                style="@style/text_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:labelFor="@+id/dose_1"
-                android:text="@string/dose_1"
-                android:visibility="gone" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/dose_1"
-                style="@style/text_style"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dose1Card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/colorSecondaryDark"
-                android:ems="10"
-                android:fontFamily="@font/roboto"
-                android:hint="@string/dose"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:text=""
-                android:visibility="gone" />
+                android:layout_margin="2dp"
+                app:contentPadding="16dp"
+                app:strokeColor="@android:color/darker_gray"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardElevation="0dp"
+                android:visibility="gone">
 
-            <EditText
-                android:id="@+id/time_dose_1"
-                style="@style/text_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/colorSecondaryDark"
-                android:ems="10"
-                android:fontFamily="@font/roboto"
-                android:hint="@string/set_time"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:text=""
-                android:visibility="gone" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/dose_2_label"
-                style="@style/text_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:labelFor="@+id/dose_2"
-                android:text="@string/dose_2"
-                android:visibility="gone" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp">
 
-            <EditText
-                android:id="@+id/dose_2"
-                style="@style/text_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/colorSecondaryDark"
-                android:ems="10"
-                android:fontFamily="@font/roboto"
-                android:hint="@string/dose"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:text=""
-                android:visibility="gone" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dose_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/dose_1" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/time_dose_2"
-                style="@style/text_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/colorSecondaryDark"
-                android:ems="10"
-                android:fontFamily="@font/roboto"
-                android:hint="@string/set_time"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:text=""
-                android:visibility="gone" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp">
 
-            <TextView
-                android:id="@+id/dose_3_label"
-                style="@style/text_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:labelFor="@+id/dose_3"
-                android:text="@string/dose_3"
-                android:visibility="gone" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time_dose_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/set_time" />
 
-            <EditText
-                android:id="@+id/dose_3"
-                style="@style/text_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/colorSecondaryDark"
-                android:ems="10"
-                android:fontFamily="@font/roboto"
-                android:hint="@string/dose"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:text=""
-                android:visibility="gone" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/time_dose_3"
-                style="@style/text_style"
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dose2Card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/colorSecondaryDark"
-                android:ems="10"
-                android:fontFamily="@font/roboto"
-                android:hint="@string/set_time"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:text=""
-                android:visibility="gone" />
+                android:layout_margin="2dp"
+                app:contentPadding="16dp"
+                app:strokeColor="@android:color/darker_gray"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardElevation="0dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dose_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/dose_2" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time_dose_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/set_time" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dose3Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:contentPadding="16dp"
+                app:strokeColor="@android:color/darker_gray"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardElevation="0dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dose_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/dose_3" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time_dose_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/set_time" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dose4Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:contentPadding="16dp"
+                app:strokeColor="@android:color/darker_gray"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardElevation="0dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dose_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/dose_4" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time_dose_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/set_time" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -210,46 +260,6 @@
                     android:textSize="22sp" />
 
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/dose_4_label"
-                style="@style/text_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:labelFor="@+id/dose_4"
-                android:text="@string/dose_4"
-                android:visibility="gone" />
-
-            <EditText
-                android:id="@+id/dose_4"
-                style="@style/text_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/colorSecondaryDark"
-                android:ems="10"
-                android:fontFamily="@font/roboto"
-                android:hint="@string/dose"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:text=""
-                android:visibility="gone" />
-
-            <EditText
-                android:id="@+id/time_dose_4"
-                style="@style/text_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/colorSecondaryDark"
-                android:ems="10"
-                android:fontFamily="@font/roboto"
-                android:hint="@string/set_time"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:text=""
-                android:visibility="gone" />
 
             <LinearLayout
                 android:layout_width="match_parent"
