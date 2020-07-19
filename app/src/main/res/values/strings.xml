@@ -12,7 +12,7 @@
     <string name="my_medications_app">My Medications App</string>
     <string name="medicine_name">Medicine Name</string>
     <string name="description">Description</string>
-    <string name="dose">eg: 50mg, 1 tablet, 5mL</string>
+    <string name="dose">Dose</string>
     <string name="dose_1">Dose 1 </string>
     <string name="dose_2">Dose 2</string>
     <string name="dose_3">Dose 3</string>

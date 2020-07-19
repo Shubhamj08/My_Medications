@@ -143,7 +143,7 @@ fun LinearLayout.setLayoutVisibility3(item: MedicineEntity?) {
 @BindingAdapter("layoutVisibility4")
 fun LinearLayout.setLayoutVisibility4(item: MedicineEntity?) {
     item?.let {
-        if (item.dose1 != "" || item.time4 != "") {
+        if (item.dose4 != "" || item.time4 != "") {
             visibility = View.VISIBLE
         }
     }

@@ -93,18 +93,23 @@ class UpdateMedicineFragment : Fragment() {
             }
         }
 
-        binding.apply {
-            if (layout1.visibility == View.VISIBLE && layout2.visibility == View.VISIBLE &&
-                layout3.visibility == View.VISIBLE && layout4.visibility == View.VISIBLE
-            ){
-                addDose.visibility = View.GONE
-                addDoseText.visibility = View.GONE
-            }
-            else{
-                addDose.visibility = View.VISIBLE
-                addDoseText.visibility = View.VISIBLE
+        fun addButtonVisibility(){
+            binding.apply {
+                if (layout1.visibility == View.VISIBLE && layout2.visibility == View.VISIBLE &&
+                    layout3.visibility == View.VISIBLE && layout4.visibility == View.VISIBLE
+                ){
+                    addDose.visibility = View.GONE
+                    addDoseText.visibility = View.GONE
+                }
+                else{
+                    addDose.visibility = View.VISIBLE
+                    addDoseText.visibility = View.VISIBLE
+                }
             }
         }
+
+        addButtonVisibility()
+
         binding.addDose.setOnClickListener {
             binding.apply {
                 when {
@@ -122,6 +127,7 @@ class UpdateMedicineFragment : Fragment() {
                     }
                 }
             }
+            addButtonVisibility()
         }
 
         binding.lifecycleOwner = this

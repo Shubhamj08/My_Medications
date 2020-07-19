@@ -25,7 +25,6 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="8dp"
-            android:elevation="10dp"
             android:iconifiedByDefault="false"
             android:queryHint="Search medicines you added" />
 
@@ -43,6 +42,7 @@
                 android:layout_marginBottom="16dp"
                 android:background="@color/colorSecondary"
                 android:clickable="true"
+                android:focusable="true"
                 app:elevation="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

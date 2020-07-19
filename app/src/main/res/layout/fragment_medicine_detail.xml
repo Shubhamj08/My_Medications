@@ -14,53 +14,54 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp">
+        android:layout_margin="8dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            app:contentPadding="8dp"
+            app:strokeColor="@android:color/darker_gray"
+            app:strokeWidth="2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/med"
-                style="@style/text_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="4dp"
-                android:layout_weight="1"
-                android:elevation="5dp"
-                android:textAlignment="center"
-                android:textSize="28sp"
+                android:layout_marginVertical="4dp"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 app:medicineNameFormatted="@{medicineDetailViewModel.medicine}"
                 tools:text="@string/medicine_name"
                 tools:textColor="@color/primaryTextColor" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/des"
-                style="@style/text_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="8dp"
-                android:layout_weight="1"
-                android:elevation="5dp"
-                android:textAlignment="textEnd"
-                android:textSize="20sp"
+                android:layout_marginVertical="4dp"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 app:medicineDescriptionFormatted="@{medicineDetailViewModel.medicine}"
                 tools:text="@string/description"
                 tools:textColor="@color/primaryTextColor" />
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:alpha="0.7"
+                app:contentPadding="2dp"
+                app:strokeColor="@android:color/transparent"
+                app:cardBackgroundColor="@android:color/transparent"
                 android:visibility="gone"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="5dp"
+                android:elevation="0dp"
                 app:doseVisibility1="@{medicineDetailViewModel.medicine}"
                 tools:visibility="visible">
 
@@ -70,43 +71,40 @@
                     android:orientation="vertical"
                     android:padding="15dp">
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/d1"
-                        style="@style/text_style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textAlignment="viewStart"
-                        android:textSize="20sp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
                         app:firstDoseFormatted="@{medicineDetailViewModel.medicine}"
                         tools:text="@string/dose_1"
                         tools:textColor="@color/primaryTextColor" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/t1"
-                        style="@style/text_style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:layout_weight="1"
                         android:textAlignment="viewStart"
-                        android:textSize="20sp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                         app:firstTimeFormatted="@{medicineDetailViewModel.medicine}"
                         tools:text="@string/set_time"
                         tools:textColor="@color/primaryTextColor" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:alpha="0.7"
+                app:contentPadding="2dp"
+                android:elevation="0dp"
+                app:strokeColor="@android:color/transparent"
+                app:cardBackgroundColor="@android:color/transparent"
                 android:visibility="gone"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="5dp"
                 app:doseVisibility2="@{medicineDetailViewModel.medicine}"
                 tools:visibility="visible">
 
@@ -116,44 +114,41 @@
                     android:orientation="vertical"
                     android:padding="15dp">
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/d2"
-                        style="@style/text_style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textAlignment="viewStart"
-                        android:textSize="20sp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
                         app:secondDoseFormatted="@{medicineDetailViewModel.medicine}"
                         tools:text="@string/dose_2"
                         tools:textColor="@color/primaryTextColor" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/t2"
-                        style="@style/text_style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:layout_weight="1"
                         android:textAlignment="viewStart"
-                        android:textSize="20sp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                         app:secondTimeFormatted="@{medicineDetailViewModel.medicine}"
                         tools:text="@string/set_time"
                         tools:textColor="@color/primaryTextColor" />
 
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:alpha="0.7"
+                app:contentPadding="2dp"
+                android:elevation="0dp"
+                app:strokeColor="@android:color/transparent"
+                app:cardBackgroundColor="@android:color/transparent"
                 android:visibility="gone"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="5dp"
                 app:doseVisibility3="@{medicineDetailViewModel.medicine}"
                 tools:visibility="visible">
 
@@ -163,43 +158,40 @@
                     android:orientation="vertical"
                     android:padding="15dp">
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/d3"
-                        style="@style/text_style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textAlignment="viewStart"
-                        android:textSize="20sp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
                         app:thirdDoseFormatted="@{medicineDetailViewModel.medicine}"
                         tools:text="@string/dose_3"
                         tools:textColor="@color/primaryTextColor" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/t3"
-                        style="@style/text_style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textAlignment="viewStart"
-                        android:textSize="20sp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                         app:thirdTimeFormatted="@{medicineDetailViewModel.medicine}"
                         tools:text="@string/set_time"
                         tools:textColor="@color/primaryTextColor" />
 
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:alpha="0.7"
+                app:contentPadding="2dp"
+                android:elevation="0dp"
+                app:strokeColor="@android:color/transparent"
+                app:cardBackgroundColor="@android:color/transparent"
                 android:visibility="gone"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="5dp"
                 app:doseVisibility4="@{medicineDetailViewModel.medicine}"
                 tools:visibility="visible">
 
@@ -209,33 +201,30 @@
                     android:orientation="vertical"
                     android:padding="15dp">
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/d4"
-                        style="@style/text_style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textAlignment="viewStart"
-                        android:textSize="20sp"
+                       android:textAppearance="@style/TextAppearance.AppCompat.Title"
                         app:fourthDoseFormatted="@{medicineDetailViewModel.medicine}"
                         tools:text="@string/dose_4"
                         tools:textColor="@color/primaryTextColor" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/t4"
-                        style="@style/text_style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:layout_weight="1"
                         android:textAlignment="viewStart"
-                        android:textSize="20sp"
                         app:fourthTimeFormatted="@{medicineDetailViewModel.medicine}"
                         tools:text="@string/set_time"
                         tools:textColor="@color/primaryTextColor" />
 
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -248,7 +237,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_weight="1"
                     android:background="@android:drawable/dialog_holo_light_frame"
-                    android:elevation="5dp"
+                    android:elevation="2dp"
                     android:onClick="@{() -> medicineDetailViewModel.onDeleteButtonPressed()}"
                     android:padding="20dp"
                     android:text="@string/delete"
@@ -261,7 +250,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_weight="1"
                     android:background="@android:drawable/dialog_holo_light_frame"
-                    android:elevation="5dp"
+                    android:elevation="2dp"
                     android:padding="20dp"
                     android:text="@string/update"
                     android:textSize="20sp" />
@@ -269,6 +258,8 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 
     </ScrollView>
 
