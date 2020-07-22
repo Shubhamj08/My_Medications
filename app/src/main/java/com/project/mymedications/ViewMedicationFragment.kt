@@ -73,9 +73,6 @@ class ViewMedicationFragment : Fragment() {
             }
         })
 
-        (activity as AppCompatActivity).supportActionBar?.title =
-            getString(R.string.title_medicine_list)
-
         binding.floatingActionButton.setOnClickListener {
             this.findNavController()
                 .navigate(R.id.action_viewMedicationFragment_to_addMedicationFragment)

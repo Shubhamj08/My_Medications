@@ -67,7 +67,7 @@
                 app:strokeWidth="1dp"
                 app:cardBackgroundColor="@android:color/transparent"
                 app:cardElevation="0dp"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -242,55 +242,48 @@
             </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <ImageButton
                     android:id="@+id/add_dose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@android:drawable/ic_input_add" />
+                    app:srcCompat="@android:drawable/ic_input_add"
+                    android:contentDescription="@string/add_dose"/>
 
                 <TextView
                     android:id="@+id/add_dose_text"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="bottom"
+                    android:gravity="center"
                     android:text="@string/add_dose"
                     android:textSize="22sp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/done_Button"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginVertical="8dp"
                     android:layout_marginEnd="3dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_weight="1"
-                    android:background="@android:drawable/dialog_holo_light_frame"
-                    android:elevation="5dp"
-                    android:padding="20dp"
                     android:text="@string/done" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/see_medicines"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:backgroundTint="@android:color/background_light"
                     android:layout_marginStart="3dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_weight="1"
-                    android:background="@android:drawable/dialog_holo_light_frame"
-                    android:padding="20dp"
-                    android:text="@string/medicine_list"
-                    app:elevation="5dp" />
+                    android:layout_marginVertical="8dp"
+                    android:text="@string/medicine_list" />
             </LinearLayout>
 
         </LinearLayout>

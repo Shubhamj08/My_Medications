@@ -42,8 +42,6 @@ class MedicineDetailFragment : Fragment() {
 
         binding.medicineDetailViewModel = medicineDetailViewModel
 
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_medicine)
-
         medicineDetailViewModel.showSnackBarEvent.observe(viewLifecycleOwner, Observer {
             if (it == true) {
                 Snackbar.make(

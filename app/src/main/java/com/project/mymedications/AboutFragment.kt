@@ -20,8 +20,6 @@ class AboutFragment : Fragment() {
     ): View? {
         val binding = DataBindingUtil.inflate<FragmentAboutBinding>(inflater,R.layout.fragment_about, container,false)
 
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_about)
-
         return binding.root
     }
 

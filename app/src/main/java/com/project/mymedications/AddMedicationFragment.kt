@@ -95,9 +95,6 @@ class AddMedicationFragment : Fragment() {
             }
         }
 
-        (activity as AppCompatActivity).supportActionBar?.title =
-            getString(R.string.title_add_medicine)
-
         binding.seeMedicines.setOnClickListener {
 
             val immh = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager

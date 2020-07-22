@@ -32,9 +32,6 @@ class HomeFragment : Fragment() {
 
         setHasOptionsMenu(true)
 
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_home)
-
-
         return binding.root
     }
 
