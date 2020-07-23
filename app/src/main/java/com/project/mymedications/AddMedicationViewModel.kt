@@ -1,6 +1,7 @@
 package com.project.mymedications
 
 import android.app.Application
+import android.widget.TextView
 import androidx.lifecycle.*
 import kotlinx.coroutines.*
 import kotlin.math.absoluteValue
@@ -9,8 +10,6 @@ class AddMedicationViewModel(
     val database: MedicineDatabaseDao,
     application: Application
 ) : ViewModel() {
-
-    val addMedication: AddMedicationFragment = AddMedicationFragment()
 
     private var viewModelJob = Job()
 
