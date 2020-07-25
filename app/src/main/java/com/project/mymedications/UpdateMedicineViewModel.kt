@@ -29,13 +29,21 @@ class UpdateMedicineViewModel(
             updateMedicine.medName = medicineDetails.medName
             updateMedicine.medDescription = medicineDetails.medDesc
             updateMedicine.dose1 = medicineDetails.dose1
-            updateMedicine.time1 = medicineDetails.time1
+            updateMedicine.hours1 = medicineDetails.hours1
+            updateMedicine.mins1 = medicineDetails.mins1
+            updateMedicine.meridiem1 = medicineDetails.meridiem1
             updateMedicine.dose2 = medicineDetails.dose2
-            updateMedicine.time2 = medicineDetails.time2
+            updateMedicine.hours2 = medicineDetails.hours2
+            updateMedicine.mins2 = medicineDetails.mins2
+            updateMedicine.meridiem2 = medicineDetails.meridiem2
             updateMedicine.dose3 = medicineDetails.dose3
-            updateMedicine.time3 = medicineDetails.time3
+            updateMedicine.hours3 = medicineDetails.hours3
+            updateMedicine.mins3 = medicineDetails.mins3
+            updateMedicine.meridiem3 = medicineDetails.meridiem3
             updateMedicine.dose4 = medicineDetails.dose4
-            updateMedicine.time4 = medicineDetails.time4
+            updateMedicine.hours4 = medicineDetails.hours4
+            updateMedicine.mins4 = medicineDetails.mins4
+            updateMedicine.meridiem4 = medicineDetails.meridiem4
             update(updateMedicine)
         }
     }

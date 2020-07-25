@@ -85,21 +85,59 @@
                         app:firstDoseFormatted="@{updateMedicineViewModel.medicine}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.med.textInputLayout"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="4dp">
+                    android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.med.textInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/time_dose_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/set_time"
-                        app:firstTimeFormatted="@{updateMedicineViewModel.medicine}" />
+                        android:hint="@string/hours"
+                        app:firstHour="@{updateMedicineViewModel.medicine}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.med.textInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="2dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time_dose_1b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/minutes"
+                            app:firstMin="@{updateMedicineViewModel.medicine}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.med.textInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_margin="2dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time_dose_1c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meridiem"
+                            app:firstMeridiem="@{updateMedicineViewModel.medicine}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -111,7 +149,7 @@
                 android:padding="14dp"
                 android:visibility="gone"
                 app:layoutVisibility2="@{updateMedicineViewModel.medicine}"
-                tools:visibility="gone">
+                tools:visibility="visible">
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.med.textInputLayout"
@@ -127,20 +165,59 @@
                         app:secondDoseFormatted="@{updateMedicineViewModel.medicine}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.med.textInputLayout"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="4dp">
+                    android:orientation="horizontal">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/time_dose_2"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.med.textInputLayout"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:hint="@string/set_time"
-                        app:secondTimeFormatted="@{updateMedicineViewModel.medicine}" />
+                        android:layout_weight="1"
+                        android:layout_margin="2dp">
 
-                </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time_dose_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hours"
+                            app:secondHour="@{updateMedicineViewModel.medicine}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.med.textInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="2dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time_dose_2b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/minutes"
+                            app:secondMin="@{updateMedicineViewModel.medicine}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.med.textInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_margin="2dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time_dose_2c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meridiem"
+                            app:secondMeridiem="@{updateMedicineViewModel.medicine}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -153,7 +230,7 @@
                 android:padding="14dp"
                 android:visibility="gone"
                 app:layoutVisibility3="@{updateMedicineViewModel.medicine}"
-                tools:visibility="gone">
+                tools:visibility="visible">
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.med.textInputLayout"
@@ -169,20 +246,59 @@
                         app:thirdDoseFormatted="@{updateMedicineViewModel.medicine}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.med.textInputLayout"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="4dp">
+                    android:orientation="horizontal">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/time_dose_3"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.med.textInputLayout"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:hint="@string/set_time"
-                        app:thirdTimeFormatted="@{updateMedicineViewModel.medicine}" />
+                        android:layout_weight="1"
+                        android:layout_margin="2dp">
 
-                </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time_dose_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hours"
+                            app:thirdHour="@{updateMedicineViewModel.medicine}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.med.textInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="2dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time_dose_3b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/minutes"
+                            app:thirdMin="@{updateMedicineViewModel.medicine}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.med.textInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_margin="2dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time_dose_3c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meridiem"
+                            app:thirdMeridiem="@{updateMedicineViewModel.medicine}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -195,7 +311,7 @@
                 android:padding="14dp"
                 android:visibility="gone"
                 app:layoutVisibility4="@{updateMedicineViewModel.medicine}"
-                tools:visibility="gone">
+                tools:visibility="visible">
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.med.textInputLayout"
@@ -211,20 +327,59 @@
                         app:fourthDoseFormatted="@{updateMedicineViewModel.medicine}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.med.textInputLayout"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="4dp">
+                    android:orientation="horizontal">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/time_dose_4"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.med.textInputLayout"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:hint="@string/set_time"
-                        app:fourthTimeFormatted="@{updateMedicineViewModel.medicine}" />
+                        android:layout_weight="1"
+                        android:layout_margin="2dp">
 
-                </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time_dose_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hours"
+                            app:fourthHour="@{updateMedicineViewModel.medicine}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.med.textInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="2dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time_dose_4b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/minutes"
+                            app:fourthMin="@{updateMedicineViewModel.medicine}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.med.textInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_margin="2dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time_dose_4c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meridiem"
+                            app:fourthMeridiem="@{updateMedicineViewModel.medicine}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
             </LinearLayout>
 

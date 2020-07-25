@@ -53,35 +53,47 @@ class AddMedicationFragment : Fragment() {
 
             medicineDetails.medName = binding.medName.text.toString()
 
-            if (medicineDetails.medName != "") {
+            if (medicineDetails.medName.isNotEmpty()) {
 
-                if (binding.medDescription.text.toString() != "") {
-                    medicineDetails.medDesc = binding.medDescription.text.toString()
-                }
-                if (binding.dose1.text.toString() != "") {
-                    medicineDetails.dose1 = binding.dose1.text.toString()
-                }
-                if (binding.timeDose1.text.toString() != "") {
-                    medicineDetails.time1 = binding.timeDose1.text.toString()
-                }
-                if (binding.dose2.text.toString() != "") {
-                    medicineDetails.dose2 = binding.dose2.text.toString()
-                }
-                if (binding.timeDose2.text.toString() != "") {
-                    medicineDetails.time2 = binding.timeDose2.text.toString()
-                }
-                if (binding.dose3.text.toString() != "") {
-                    medicineDetails.dose3 = binding.dose3.text.toString()
-                }
-                if (binding.timeDose3.text.toString() != "") {
-                    medicineDetails.time3 = binding.timeDose3.text.toString()
-                }
-                if (binding.dose4.text.toString() != "") {
-                    medicineDetails.dose4 = binding.dose4.text.toString()
-                }
-                if (binding.timeDose4.text.toString() != "") {
-                    medicineDetails.time4 = binding.timeDose4.text.toString()
-                }
+                if (binding.medDescription.text.toString().isNotEmpty()) medicineDetails.medDesc =
+                    binding.medDescription.text.toString()
+
+                if (binding.dose1.text.toString().isNotEmpty()) medicineDetails.dose1 =
+                    binding.dose1.text.toString()
+                if (binding.timeDose1.text.toString().isNotEmpty()) medicineDetails.hours1 =
+                    binding.timeDose1.text.toString()
+                if (binding.timeDose1b.text.toString().isNotEmpty()) medicineDetails.mins1 =
+                    binding.timeDose1b.text.toString()
+                if (binding.timeDose1c.text.toString().isNotEmpty()) medicineDetails.meridiem1 =
+                    binding.timeDose1c.text.toString()
+
+                if (binding.dose2.text.toString().isNotEmpty()) medicineDetails.dose2 =
+                    binding.dose2.text.toString()
+                if (binding.timeDose2.text.toString().isNotEmpty()) medicineDetails.hours2 =
+                    binding.timeDose2.text.toString()
+                if (binding.timeDose2b.text.toString().isNotEmpty()) medicineDetails.mins2 =
+                    binding.timeDose2b.text.toString()
+                if (binding.timeDose2c.text.toString().isNotEmpty()) medicineDetails.meridiem2 =
+                    binding.timeDose2c.text.toString()
+
+                if (binding.dose3.text.toString().isNotEmpty()) medicineDetails.dose3 =
+                    binding.dose3.text.toString()
+                if (binding.timeDose3.text.toString().isNotEmpty()) medicineDetails.hours3 =
+                    binding.timeDose3.text.toString()
+                if (binding.timeDose3b.text.toString().isNotEmpty()) medicineDetails.mins3 =
+                    binding.timeDose3b.text.toString()
+                if (binding.timeDose3c.text.toString().isNotEmpty()) medicineDetails.meridiem3 =
+                    binding.timeDose3c.text.toString()
+
+                if (binding.dose4.text.toString().isNotEmpty()) medicineDetails.dose4 =
+                    binding.dose4.text.toString()
+                if (binding.timeDose4.text.toString().isNotEmpty()) medicineDetails.hours4 =
+                    binding.timeDose4.text.toString()
+                if (binding.timeDose4b.text.toString().isNotEmpty()) medicineDetails.mins4 =
+                    binding.timeDose4b.text.toString()
+                if (binding.timeDose4c.text.toString().isNotEmpty()) medicineDetails.meridiem4 =
+                    binding.timeDose4c.text.toString()
+
                 binding.invalidateAll()
 
                 val immh =

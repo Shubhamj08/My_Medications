@@ -53,33 +53,45 @@ class UpdateMedicineFragment : Fragment() {
 
             if (medUpDetails.medName != "") {
 
-                if (binding.medDescription.text.toString() != "") {
-                    medUpDetails.medDesc = binding.medDescription.text.toString()
-                }
-                if (binding.dose1.text.toString() != "") {
-                    medUpDetails.dose1 = binding.dose1.text.toString()
-                }
-                if (binding.timeDose1.text.toString() != "") {
-                    medUpDetails.time1 = binding.timeDose1.text.toString()
-                }
-                if (binding.dose2.text.toString() != "") {
-                    medUpDetails.dose2 = binding.dose2.text.toString()
-                }
-                if (binding.timeDose2.text.toString() != "") {
-                    medUpDetails.time2 = binding.timeDose2.text.toString()
-                }
-                if (binding.dose3.text.toString() != "") {
-                    medUpDetails.dose3 = binding.dose3.text.toString()
-                }
-                if (binding.timeDose3.text.toString() != "") {
-                    medUpDetails.time3 = binding.timeDose3.text.toString()
-                }
-                if (binding.dose4.text.toString() != "") {
-                    medUpDetails.dose4 = binding.dose4.text.toString()
-                }
-                if (binding.timeDose4.text.toString() != "") {
-                    medUpDetails.time4 = binding.timeDose4.text.toString()
-                }
+                if (binding.medDescription.text.toString() != "") medUpDetails.medDesc =
+                    binding.medDescription.text.toString()
+
+                if (binding.dose1.text.toString() != "") medUpDetails.dose1 =
+                    binding.dose1.text.toString()
+                if (binding.timeDose1.text.toString() != "") medUpDetails.hours1 =
+                    binding.timeDose1.text.toString()
+                if (binding.timeDose1b.text.toString() != "") medUpDetails.mins1 =
+                    binding.timeDose1b.text.toString()
+                if (binding.timeDose1c.text.toString() != "") medUpDetails.meridiem1 =
+                    binding.timeDose1c.text.toString()
+
+                if (binding.dose2.text.toString() != "") medUpDetails.dose2 =
+                    binding.dose2.text.toString()
+                if (binding.timeDose2.text.toString() != "") medUpDetails.hours2 =
+                    binding.timeDose2.text.toString()
+                if (binding.timeDose2b.text.toString() != "") medUpDetails.mins2 =
+                    binding.timeDose2b.text.toString()
+                if (binding.timeDose2c.text.toString() != "") medUpDetails.meridiem2 =
+                    binding.timeDose2c.text.toString()
+
+                if (binding.dose3.text.toString() != "") medUpDetails.dose3 =
+                    binding.dose3.text.toString()
+                if (binding.timeDose3.text.toString() != "") medUpDetails.hours3 =
+                    binding.timeDose3.text.toString()
+                if (binding.timeDose3b.text.toString() != "") medUpDetails.mins3 =
+                    binding.timeDose3b.text.toString()
+                if (binding.timeDose3c.text.toString() != "") medUpDetails.meridiem3 =
+                    binding.timeDose3c.text.toString()
+
+                if (binding.dose4.text.toString() != "") medUpDetails.dose4 =
+                    binding.dose4.text.toString()
+                if (binding.timeDose4.text.toString() != "") medUpDetails.hours4 =
+                    binding.timeDose4.text.toString()
+                if (binding.timeDose4b.text.toString() != "") medUpDetails.mins4 =
+                    binding.timeDose4b.text.toString()
+                if (binding.timeDose4c.text.toString() != "") medUpDetails.meridiem4 =
+                    binding.timeDose4c.text.toString()
+
                 binding.invalidateAll()
 
                 val immh =
@@ -93,15 +105,14 @@ class UpdateMedicineFragment : Fragment() {
             }
         }
 
-        fun addButtonVisibility(){
+        fun addButtonVisibility() {
             binding.apply {
                 if (layout1.visibility == View.VISIBLE && layout2.visibility == View.VISIBLE &&
                     layout3.visibility == View.VISIBLE && layout4.visibility == View.VISIBLE
-                ){
+                ) {
                     addDose.visibility = View.GONE
                     addDoseText.visibility = View.GONE
-                }
-                else{
+                } else {
                     addDose.visibility = View.VISIBLE
                     addDoseText.visibility = View.VISIBLE
                 }

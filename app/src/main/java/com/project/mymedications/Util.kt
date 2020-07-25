@@ -1,5 +1,6 @@
 package com.project.mymedications
 
+import android.annotation.SuppressLint
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -40,7 +41,28 @@ fun TextView.setFirstDoseFormatted(item: MedicineEntity?) {
 @BindingAdapter("firstTimeFormatted")
 fun TextView.setFirstTimeFormatted(item: MedicineEntity?) {
     item?.let {
-        text = item.time1
+        text = item.hours1 + ":" + item.mins1 + " " + item.meridiem1
+    }
+}
+
+@BindingAdapter("firstHour")
+fun TextView.hours(item: MedicineEntity?){
+    item?.let{
+        text = item.hours1
+    }
+}
+
+@BindingAdapter("firstMin")
+fun TextView.mins(item: MedicineEntity?){
+    item?.let{
+        text = item.mins1
+    }
+}
+
+@BindingAdapter("firstMeridiem")
+fun TextView.meridiem(item: MedicineEntity?){
+    item?.let{
+        text = item.meridiem1
     }
 }
 
@@ -63,7 +85,28 @@ fun TextView.setSecondDoseFormatted(item: MedicineEntity?) {
 @BindingAdapter("secondTimeFormatted")
 fun TextView.setSecondTimeFormatted(item: MedicineEntity?) {
     item?.let {
-        text = item.time2
+        text = item.hours2 + ":" + item.mins2 + " " + item.meridiem2
+    }
+}
+
+@BindingAdapter("secondHour")
+fun TextView.hours2(item: MedicineEntity?){
+    item?.let{
+        text = item.hours2
+    }
+}
+
+@BindingAdapter("secondMin")
+fun TextView.mins2(item: MedicineEntity?){
+    item?.let{
+        text = item.mins2
+    }
+}
+
+@BindingAdapter("secondMeridiem")
+fun TextView.meridiem2(item: MedicineEntity?){
+    item?.let{
+        text = item.meridiem2
     }
 }
 
@@ -86,7 +129,28 @@ fun TextView.setThirdDoseFormatted(item: MedicineEntity?) {
 @BindingAdapter("thirdTimeFormatted")
 fun TextView.setThirdTimeFormatted(item: MedicineEntity?) {
     item?.let {
-        text = item.time3
+        text = item.hours3 + ":" + item.mins3 + " " + item.meridiem3
+    }
+}
+
+@BindingAdapter("thirdHour")
+fun TextView.hours3(item: MedicineEntity?){
+    item?.let{
+        text = item.hours3
+    }
+}
+
+@BindingAdapter("thirdMin")
+fun TextView.mins3(item: MedicineEntity?){
+    item?.let{
+        text = item.mins3
+    }
+}
+
+@BindingAdapter("thirdMeridiem")
+fun TextView.meridiem3(item: MedicineEntity?){
+    item?.let{
+        text = item.meridiem3
     }
 }
 
@@ -109,7 +173,28 @@ fun TextView.setFourthDoseFormatted(item: MedicineEntity?) {
 @BindingAdapter("fourthTimeFormatted")
 fun TextView.setFourthTimeFormatted(item: MedicineEntity?) {
     item?.let {
-        text = item.time4
+        text = item.hours4 + ":" + item.mins4 + " " + item.meridiem4
+    }
+}
+
+@BindingAdapter("fourthHour")
+fun TextView.hours4(item: MedicineEntity?){
+    item?.let{
+        text = item.hours4
+    }
+}
+
+@BindingAdapter("fourthMin")
+fun TextView.mins4(item: MedicineEntity?){
+    item?.let{
+        text = item.mins4
+    }
+}
+
+@BindingAdapter("fourthMeridiem")
+fun TextView.meridiem4(item: MedicineEntity?){
+    item?.let{
+        text = item.meridiem4
     }
 }
 
