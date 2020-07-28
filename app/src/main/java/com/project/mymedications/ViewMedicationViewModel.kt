@@ -7,7 +7,7 @@ import kotlinx.coroutines.*
 
 
 class ViewMedicationViewModel(
-    val database: MedicineDatabaseDao,
+    private val database: MedicineDatabaseDao,
     val application: Application
 ) : ViewModel() {
 

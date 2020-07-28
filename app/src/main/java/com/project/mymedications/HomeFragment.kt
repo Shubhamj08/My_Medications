@@ -2,7 +2,6 @@ package com.project.mymedications
 
 import android.os.Bundle
 import android.view.*
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
@@ -37,15 +36,14 @@ class HomeFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.options_menu, menu)
+        inflater.inflate(R.menu.options_menu, menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(
-            item!!,
+    override fun onOptionsItemSelected(item: MenuItem): Boolean =
+        NavigationUI.onNavDestinationSelected(
+            item,
             requireView().findNavController()
         )
                 || super.onOptionsItemSelected(item)
-    }
 
 }

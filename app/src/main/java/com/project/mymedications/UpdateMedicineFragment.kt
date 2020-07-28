@@ -1,7 +1,6 @@
 package com.project.mymedications
 
 import android.content.Context
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,7 +11,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.project.mymedications.databinding.UpdateMedicineFragmentBinding
-import kotlinx.android.synthetic.main.fragment_medicine_detail.*
 
 class UpdateMedicineFragment : Fragment() {
 

@@ -6,13 +6,11 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.*
 
 class MedicineDetailViewModel(
-    private val medicineEntityKey: Long = 0L,
-    dataSource: MedicineDatabaseDao
+    medicineEntityKey: Long = 0L,
+    val dataSource: MedicineDatabaseDao
 ) : ViewModel() {
 
-    val database = dataSource
-
-    val medicineDetail = MedicineDetailFragment()
+    private val database = dataSource
 
     private val viewModelJob = Job()
 

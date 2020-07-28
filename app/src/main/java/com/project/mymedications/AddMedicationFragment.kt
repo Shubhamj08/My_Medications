@@ -1,13 +1,16 @@
 package com.project.mymedications
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Context
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -140,7 +143,33 @@ class AddMedicationFragment : Fragment() {
             }
         }
 
+        createChannel(
+            getString(R.string.notification_channel_ID),
+            getString(R.string.notification_channel_name)
+        )
 
         return binding.root
+    }
+
+    private fun createChannel(channelId: String, channelName: String){
+
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            val notificationChannel = NotificationChannel(
+                channelId,
+                channelName,
+                NotificationManager.IMPORTANCE_HIGH
+            )
+
+            notificationChannel.enableLights(true)
+            notificationChannel.lightColor = Color.BLUE
+            notificationChannel.enableVibration(true)
+            notificationChannel.description  = "Time for medicine"
+
+            val notificationManager = requireActivity().getSystemService(
+                NotificationManager::class.java
+            )
+
+            notificationManager?.createNotificationChannel(notificationChannel)
+        }
     }
 }

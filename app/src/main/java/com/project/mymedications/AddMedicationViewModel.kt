@@ -1,14 +1,17 @@
 package com.project.mymedications
 
+import android.app.AlarmManager
 import android.app.Application
-import android.widget.TextView
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
 import androidx.lifecycle.*
 import kotlinx.coroutines.*
-import kotlin.math.absoluteValue
+import java.util.*
 
 class AddMedicationViewModel(
-    val database: MedicineDatabaseDao,
-    application: Application
+    private val database: MedicineDatabaseDao,
+    val app: Application
 ) : ViewModel() {
 
     private var viewModelJob = Job()
@@ -17,8 +20,20 @@ class AddMedicationViewModel(
 
     private var currentMedicine = MutableLiveData<MedicineEntity?>()
 
+    private val alarmManager = app.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+    private val notifyIntent = Intent(app, AlarmReceiver::class.java)
+
+    private val notifyPendingIntent: PendingIntent
+
     init {
         initializeCurrentMedicine()
+
+        notifyPendingIntent = PendingIntent.getBroadcast(
+            app,
+            0,
+            notifyIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
     }
 
     private fun initializeCurrentMedicine() {
@@ -61,6 +76,25 @@ class AddMedicationViewModel(
             insert(newMedicine)
             currentMedicine.value = getCurrentMedicineFromDatabase()
         }
+
+        startTimer(medicineDetails)
+    }
+
+    private fun startTimer(medicineDetails: MedicineDetails) {
+
+        val notificationTime = Calendar.getInstance().apply {
+            timeInMillis = System.currentTimeMillis()
+            set(Calendar.HOUR_OF_DAY, medicineDetails.hours1.toInt())
+            set(Calendar.MINUTE, medicineDetails.mins1.toInt())
+        }
+
+        alarmManager.setInexactRepeating(
+            AlarmManager.RTC_WAKEUP,
+            notificationTime.timeInMillis,
+            AlarmManager.INTERVAL_DAY,
+            notifyPendingIntent
+        )
+
     }
 
     private suspend fun insert(medicine: MedicineEntity) {

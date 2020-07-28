@@ -52,17 +52,17 @@ class MedicineAdapter(val clickListener: MedicineEntityListener, val allMeds:Arr
         return object : Filter() {
             override fun publishResults(
                 charSequence: CharSequence?,
-                filterResults: Filter.FilterResults
+                filterResults: FilterResults
             ) {
                     medList = filterResults.values as ArrayList<MedicineEntity>
                     submitList(medList)
             }
 
-            override fun performFiltering(charSequence: CharSequence?): Filter.FilterResults {
+            override fun performFiltering(charSequence: CharSequence?): FilterResults {
                 val queryString = charSequence.toString().toLowerCase()
-                val filterResults = Filter.FilterResults()
+                val filterResults = FilterResults()
                 filterResults.values =
-                    if (queryString == null || queryString.isEmpty()) {
+                    if (queryString.isEmpty()) {
                         allMeds
                     } else allMeds.filter {
                         it.medName.toLowerCase().contains(queryString)

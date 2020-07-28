@@ -33,6 +33,10 @@
     <string name="hours">Hrs</string>
     <string name="minutes">Mins</string>
     <string name="meridiem">pm</string>
+    <string name="notification_title">Hello!</string>
+    <string name="notification_message">Time for your medicine</string>
+    <string name="notification_channel_ID" translatable="false">med_channel</string>
+    <string name="notification_channel_name" translatable="true">medicine</string>
 
 
 </resources>

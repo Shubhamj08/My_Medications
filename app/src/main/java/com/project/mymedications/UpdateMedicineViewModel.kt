@@ -5,17 +5,15 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.*
 
 class UpdateMedicineViewModel(
-    private val medicineEntityKey: Long = 0L,
+    medicineEntityKey: Long = 0L,
     dataSource: MedicineDatabaseDao
 ) : ViewModel() {
 
-    val database = dataSource
+    private val database = dataSource
 
     private val viewModelJob = Job()
 
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
-
-    val updateMedicineFragment = UpdateMedicineFragment()
 
     val medicine: LiveData<MedicineEntity>
 
