@@ -9,7 +9,7 @@ private const val NOTIFICATION_ID = 0
 private const val REQUEST_CODE = 0
 private const val FLAGS = 0
 
-fun NotificationManager.sendNotification(messageBody: String, applicationContext: Context){
+fun NotificationManager.sendNotification(messageBody: String, applicationContext: Context, id:Int){
 
     val builder = NotificationCompat.Builder(
         applicationContext,
@@ -19,5 +19,5 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         .setContentTitle(applicationContext.getString(R.string.notification_title))
         .setContentText(messageBody)
 
-    notify(NOTIFICATION_ID, builder.build())
+    notify(id, builder.build())
 }

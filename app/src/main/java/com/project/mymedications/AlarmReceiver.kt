@@ -7,6 +7,9 @@ import android.content.Intent
 import androidx.core.content.ContextCompat
 
 class AlarmReceiver: BroadcastReceiver() {
+
+    var id: Int = 0
+
     override fun onReceive(context: Context, intent: Intent) {
 
         val notificationManager = ContextCompat.getSystemService(
@@ -16,7 +19,10 @@ class AlarmReceiver: BroadcastReceiver() {
 
         notificationManager.sendNotification(
             context.getText(R.string.notification_message).toString(),
-            context
+            context,
+            id
         )
+
+        id++
     }
 }

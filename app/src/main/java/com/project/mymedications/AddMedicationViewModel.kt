@@ -82,18 +82,89 @@ class AddMedicationViewModel(
 
     private fun startTimer(medicineDetails: MedicineDetails) {
 
-        val notificationTime = Calendar.getInstance().apply {
-            timeInMillis = System.currentTimeMillis()
-            set(Calendar.HOUR_OF_DAY, medicineDetails.hours1.toInt())
-            set(Calendar.MINUTE, medicineDetails.mins1.toInt())
+        if(medicineDetails.hours1.isNotEmpty()) {
+
+            var hr = medicineDetails.hours1.toInt()
+
+            if( medicineDetails.mins1.isEmpty() && (hr!=0 || hr!=12)) medicineDetails.mins1 = "00"
+            if(medicineDetails.meridiem1 == "pm") hr += 12
+
+            val notificationTime = Calendar.getInstance().apply {
+                timeInMillis = System.currentTimeMillis()
+                set(Calendar.HOUR_OF_DAY, hr)
+                set(Calendar.MINUTE, medicineDetails.mins1.toInt())
+            }
+
+            alarmManager.setInexactRepeating(
+                AlarmManager.RTC_WAKEUP,
+                notificationTime.timeInMillis,
+                AlarmManager.INTERVAL_DAY,
+                notifyPendingIntent
+            )
         }
 
-        alarmManager.setInexactRepeating(
-            AlarmManager.RTC_WAKEUP,
-            notificationTime.timeInMillis,
-            AlarmManager.INTERVAL_DAY,
-            notifyPendingIntent
-        )
+        if(medicineDetails.hours2.isNotEmpty()) {
+
+            var hr = medicineDetails.hours2.toInt()
+
+            if( medicineDetails.mins2.isEmpty()) medicineDetails.mins2 = "00"
+            if(medicineDetails.meridiem2 == "pm" && (hr!=0 || hr!=12)) hr += 12
+
+            val notificationTime = Calendar.getInstance().apply {
+                timeInMillis = System.currentTimeMillis()
+                set(Calendar.HOUR_OF_DAY, hr)
+                set(Calendar.MINUTE, medicineDetails.mins2.toInt())
+            }
+
+            alarmManager.setInexactRepeating(
+                AlarmManager.RTC_WAKEUP,
+                notificationTime.timeInMillis,
+                AlarmManager.INTERVAL_DAY,
+                notifyPendingIntent
+            )
+        }
+
+        if(medicineDetails.hours3.isNotEmpty()) {
+
+            var hr = medicineDetails.hours3.toInt()
+
+            if( medicineDetails.mins3.isEmpty() && (hr!=0 || hr!=12)) medicineDetails.mins3 = "00"
+            if(medicineDetails.meridiem3 == "pm") hr += 12
+
+            val notificationTime = Calendar.getInstance().apply {
+                timeInMillis = System.currentTimeMillis()
+                set(Calendar.HOUR_OF_DAY, hr)
+                set(Calendar.MINUTE, medicineDetails.mins3.toInt())
+            }
+
+            alarmManager.setInexactRepeating(
+                AlarmManager.RTC_WAKEUP,
+                notificationTime.timeInMillis,
+                AlarmManager.INTERVAL_DAY,
+                notifyPendingIntent
+            )
+        }
+
+        if(medicineDetails.hours4.isNotEmpty()) {
+
+            var hr = medicineDetails.hours4.toInt()
+
+            if( medicineDetails.mins4.isEmpty() && (hr!=0 || hr!=12)) medicineDetails.mins4 = "00"
+            if(medicineDetails.meridiem4 == "pm") hr += 12
+
+            val notificationTime = Calendar.getInstance().apply {
+                timeInMillis = System.currentTimeMillis()
+                set(Calendar.HOUR_OF_DAY, hr)
+                set(Calendar.MINUTE, medicineDetails.mins4.toInt())
+            }
+
+            alarmManager.setInexactRepeating(
+                AlarmManager.RTC_WAKEUP,
+                notificationTime.timeInMillis,
+                AlarmManager.INTERVAL_DAY,
+                notifyPendingIntent
+            )
+        }
 
     }
 
