@@ -1,15 +1,16 @@
 package com.project.mymedications
 
+import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import androidx.core.app.NotificationCompat
 
-// Notification ID.
-private const val NOTIFICATION_ID = 0
+
+
 private const val REQUEST_CODE = 0
 private const val FLAGS = 0
 
-fun NotificationManager.sendNotification(messageBody: String, applicationContext: Context, id:Int){
+fun NotificationManager.sendNotification(messageBody: String, applicationContext: Context){
 
     val builder = NotificationCompat.Builder(
         applicationContext,
@@ -19,5 +20,11 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         .setContentTitle(applicationContext.getString(R.string.notification_title))
         .setContentText(messageBody)
 
-    notify(id, builder.build())
+    notify(getRandomRequestId(), builder.build())
+}
+
+fun getRandomRequestId(): Int{
+    val start: Int = (0..100).random()
+    val end: Int = (101..200).random()
+    return (start..end).random()
 }
